@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2주 문헌 분석 · 교육용 AI 에이전트 개발</title>
+<meta name="description" content="검색 전략부터 문헌분석표·사례분석표 작성과 연구 공백 찾기까지, 2주차 강의 노트.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>📚</text></svg>">
+</head>
+<body>
+
+<a class="skip" href="#doc">본문으로 건너뛰기</a>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="index.html">교육용 AI 에이전트 개발<span class="brand__sub">2026-2 · 대학원</span></a>
+    <nav class="weeknav" aria-label="주차 이동">
+      <a href="week01.html">1주</a>
+      <a href="week02.html" aria-current="page">2주</a>
+      <a href="week03.html">3주</a>
+      <a href="week04.html">4주</a>
+      <a href="week05.html">5주</a>
+      <a href="week06.html">6주</a>
+      <a href="week07.html">7주</a>
+      <a href="week08.html">8주</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+
+  <aside class="rail">
+    <p class="rail__label">오늘의 질문</p>
+    <ol class="chain">
+      <li><a href="#q1"><span class="n">1</span><span>이미 누가 연구했는가?</span></a></li>
+      <li><a href="#q2"><span class="n">2</span><span>무엇을 어디서 찾는가?</span></a></li>
+      <li><a href="#q3"><span class="n">3</span><span>논문에서 무엇을 뽑는가?</span></a></li>
+      <li><a href="#q4"><span class="n">4</span><span>이론은 어떻게 들어오는가?</span></a></li>
+      <li><a href="#q5"><span class="n">5</span><span>기존 시스템은 무엇을 하나?</span></a></li>
+      <li><a href="#q6"><span class="n">6</span><span>그들이 못 한 것은?</span></a></li>
+      <li><a href="#q7"><span class="n">7</span><span>내 연구의 자리는?</span></a></li>
+    </ol>
+    <div class="rail__foot">
+      <a href="#workshop">워크숍 · 템플릿</a>
+      <a href="#submit">제출 기준과 루브릭</a>
+      <a href="#next">다음 주 · 읽을거리</a>
+    </div>
+  </aside>
+
+  <main class="doc" id="doc">
+
+    <div class="head">
+      <p class="eyebrow">2주 · 문헌 분석</p>
+      <h1>이미 밝혀진 것과<br>아직 비어 있는 것</h1>
+      <p class="lede">
+        지난주에 현장에서 무엇이 안 되는지를 확인했습니다. 이번 주에는 그 문제에 대해
+        학계가 이미 무엇을 알아냈는지 확인합니다. 이 둘이 만나야 다음 주에 설계원리가 나옵니다.
+        문헌을 건너뛴 설계는 <em>근거 없는 기능의 목록</em>이 됩니다.
+      </p>
+
+      <dl class="meta">
+        <div><dt>산출물</dt><dd>문헌분석표 · 사례분석표</dd></div>
+        <div><dt>수업</dt><dd>3시간</dd></div>
+        <div><dt>과제 시간</dt><dd>8–10시간</dd></div>
+        <div><dt>분량</dt><dd>논문 15편 · 사례 4개</dd></div>
+      </dl>
+
+      <div class="goals">
+        <h2>학습목표</h2>
+        <ol>
+          <li>포함·배제 기준을 세워 체계적으로 문헌을 검색하고 선별할 수 있다.</li>
+          <li>논문에서 설계에 쓸 정보를 추출해 문헌분석표로 정리할 수 있다.</li>
+          <li>기존 시스템을 비교 분석해 자기 연구가 메울 공백을 진술할 수 있다.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ================= Q1 ================= -->
+    <section class="q" id="q1">
+      <div class="q__head">
+        <span class="q__n">질문 1</span>
+        <h2>내 문제는 이미 누가 연구했는가?</h2>
+      </div>
+
+      <p>
+        문헌 분석을 "논문을 읽어서 인용거리를 모으는 일"로 생각하면 지루하고 쓸모도 없습니다.
+        설계·개발연구에서 문헌 분석은 <strong>설계의 재료를 구하러 가는 일</strong>입니다.
+        세 가지를 얻으러 갑니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>얻는 것</th><th>없으면 생기는 일</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>중복 회피</th>
+              <td>이미 열 번 만들어진 것을 열한 번째로 만들고, 심사에서 "새로운 게 뭐냐"는 질문에 답하지 못한다</td>
+            </tr>
+            <tr>
+              <th>이론적 근거</th>
+              <td>"이렇게 하면 좋을 것 같아서" 넣은 기능만 남는다. 6주차 전문가 타당화에서 무너진다</td>
+            </tr>
+            <tr>
+              <th>설계 아이디어</th>
+              <td>남들이 이미 시행착오로 알아낸 것을 처음부터 다시 겪는다</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">함정 · 인용을 위한 인용</p>
+        <p>
+          "선행 연구에 따르면 AI는 교육에 유용하다(김OO, 2023)."<br>
+          — 이런 문장은 설계에 아무 영향을 주지 않습니다. 이번 주에 여러분이 뽑아야 할 것은
+          <strong>설계 결정을 바꾸는 정보</strong>입니다. 어떤 조건에서 무엇이 효과가 있었고,
+          무엇이 없었는지.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내가 읽으려는 논문이 내 설계의 어떤 결정을 바꿀 수 있는지 말할 수 있는가?
+      </div>
+    </section>
+
+    <!-- ================= Q2 ================= -->
+    <section class="q" id="q2">
+      <div class="q__head">
+        <span class="q__n">질문 2</span>
+        <h2>무엇을, 어디서 찾아야 하는가?</h2>
+      </div>
+
+      <h3>검색어를 조합으로 만들기</h3>
+
+      <p>
+        한 단어로 검색하면 3만 건이 나오고, 문장으로 검색하면 0건이 나옵니다.
+        <strong>세 축을 곱하세요.</strong>
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>축</th><th>예</th></tr></thead>
+          <tbody>
+            <tr><th>개념</th><td>AI 튜터, 지능형 튜터링 시스템, 대화형 에이전트, 챗봇, LLM</td></tr>
+            <tr><th>과제·역량</th><td>논증, 근거 생성, 자기설명, 문제해결, 자기조절</td></tr>
+            <tr><th>대상·맥락</th><td>중학생, 예비교사, 온라인 학습, 교실 수업</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl__bar">
+          <span class="tpl__name">검색식 예시</span>
+          <button class="copy" type="button">복사</button>
+        </div>
+<pre><code>("intelligent tutoring system" OR "conversational agent" OR chatbot
+  OR "AI tutor" OR "large language model")
+AND (argumentation OR "evidence generation" OR "self-explanation")
+AND (secondary OR "middle school" OR adolescent)
+
+한국어:
+(인공지능 튜터 OR 지능형 튜터링 OR 대화형 에이전트 OR 챗봇)
+AND (논증 OR 근거 OR 자기설명)
+AND (중학생 OR 중등)</code></pre>
+      </div>
+
+      <h3>어디서 찾는가</h3>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>구분</th><th>DB</th><th>쓰는 이유</th></tr></thead>
+          <tbody>
+            <tr><th>국내</th><td>RISS, KCI, DBpia</td><td>국내 학습자·교육과정 맥락. 심사에서 반드시 묻는다</td></tr>
+            <tr><th>해외 교육</th><td>ERIC, Scopus, Web of Science</td><td>교육공학·학습과학 주류 저널</td></tr>
+            <tr><th>기술</th><td>ACM DL, IEEE Xplore, arXiv</td><td>에이전트 구조·인터랙션 설계</td></tr>
+            <tr><th>탐색</th><td>Google Scholar, Semantic Scholar</td><td>인용 추적(눈덩이 표집)에 강함</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">눈덩이 표집이 가장 빠르다</p>
+        <p>
+          좋은 논문 한 편을 찾으면 그 논문의 <strong>참고문헌</strong>(과거 방향)과
+          <strong>이 논문을 인용한 논문</strong>(현재 방향)을 각각 따라가세요.
+          검색어를 스무 번 바꾸는 것보다 이 방법이 훨씬 빠릅니다. 특히 최근 3년 내
+          리뷰 논문 한 편을 먼저 찾으면 절반은 끝납니다.
+        </p>
+      </div>
+
+      <h3>포함·배제 기준을 먼저 쓴다</h3>
+
+      <p>
+        기준을 미리 정해두지 않으면 "눈에 띄는 논문"만 모으게 되고, 방법 절에 쓸 말이 없어집니다.
+      </p>
+
+      <div class="tpl">
+        <div class="tpl__bar">
+          <span class="tpl__name">포함·배제 기준</span>
+          <button class="copy" type="button">복사</button>
+        </div>
+<pre><code>포함
+- 발행 연도: 20__년 이후
+- 대상: __________
+- 유형: 학술지 논문, 주요 학회 논문
+- 내용: 학습자와 상호작용하는 시스템을 설계·구현·평가한 연구
+
+배제
+- 시스템 없이 인식·태도만 조사한 연구
+- 학위논문 중 학술지 게재본이 있는 경우 (중복)
+- 원문 접근 불가
+
+최종 선정: 15편  (검색 __건 → 초록 검토 __건 → 전문 검토 __건 → 선정 15건)</code></pre>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">AI 검색 도구를 쓸 때</p>
+        <p>
+          Elicit, Consensus, Scholar GPT 같은 도구는 <strong>탐색</strong>에는 좋지만
+          존재하지 않는 논문을 그럴듯하게 만들어 내는 일이 있습니다. 반드시
+          <strong>DOI로 원문을 확인</strong>하고, 인용은 원문에서 직접 확인한 것만 쓰세요.
+          도구를 어떻게 썼는지는 보고서 방법 절에 적습니다.
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 25분</p>
+        <p>
+          세 축 검색어 표를 채우고, 검색식 하나를 만들어 DB 두 곳에서 실제로 돌려 보세요.
+          결과 건수를 적고, 포함·배제 기준을 적용해 초록만 보고 <strong>10편</strong>을
+          추려내세요. 이 자리에서 못 고르는 기준은 집에서도 못 씁니다.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        검색 → 선정 과정을 숫자로 적을 수 있는가? (몇 건 검색 → 몇 건 선정)
+      </div>
+    </section>
+
+    <!-- ================= Q3 ================= -->
+    <section class="q" id="q3">
+      <div class="q__head">
+        <span class="q__n">질문 3</span>
+        <h2>논문에서 무엇을 뽑아내는가?</h2>
+      </div>
+
+      <p>
+        15편을 다 정독하려 하지 마세요. 시간도 없고 필요도 없습니다.
+        <strong>세 단계로 나눠 읽으세요.</strong>
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>단계</th><th>읽는 곳</th><th>편수</th><th>판단</th></tr></thead>
+          <tbody>
+            <tr><th>1차</th><td>제목 · 초록</td><td>50편+</td><td>버릴 것 골라내기</td></tr>
+            <tr><th>2차</th><td>서론 끝 · 결론 · 표와 그림</td><td>15편</td><td>분석표 채우기</td></tr>
+            <tr><th>3차</th><td>전문 정독</td><td>4–5편</td><td>설계에 직접 쓸 논문만</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>문헌분석표의 열 구조</h3>
+
+      <p>
+        아래 열은 나중에 그대로 3주차 설계원리의 근거가 됩니다. 특히
+        <strong>설계 요소</strong>와 <strong>한계</strong> 열이 핵심입니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>열</th><th>적는 내용</th></tr></thead>
+          <tbody>
+            <tr><th>ID</th><td>L1, L2 … (3주차에 근거 추적용으로 씀)</td></tr>
+            <tr><th>서지</th><td>저자, 연도, 제목, 출처</td></tr>
+            <tr><th>연구 목적</th><td>한 문장</td></tr>
+            <tr><th>대상·규모</th><td>누구를 몇 명</td></tr>
+            <tr><th>이론</th><td>어떤 교수학습 이론에 기댔는가</td></tr>
+            <tr><th>설계 요소</th><td><strong>시스템이 구체적으로 무엇을 했는가</strong> — 가장 중요</td></tr>
+            <tr><th>측정</th><td>무엇을 어떻게 쟀는가</td></tr>
+            <tr><th>결과</th><td>효과가 있었는가, 어느 정도로</td></tr>
+            <tr><th>한계</th><td>저자가 스스로 밝힌 한계 + 내가 본 한계</td></tr>
+            <tr><th>내 연구와의 관련</th><td>이 논문이 내 설계의 무엇을 바꾸는가</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--more">
+        <p class="box__t">더 해보기 · AI로 1차 정리하기</p>
+        <p>
+          PDF를 Claude에 넣고 위 열 구조를 주면서 "표의 각 칸을 논문 원문의 문장으로
+          채우고, 해당 페이지를 표기해 줘"라고 요청하면 2차 읽기 속도가 크게 빨라집니다.
+          다만 <strong>결과와 한계 칸은 반드시 직접 확인</strong>하세요. 이 두 칸이 설계를
+          바꾸는 칸이고, 요약 과정에서 가장 왜곡되기 쉬운 칸입니다.
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 20분</p>
+        <p>
+          고른 논문 중 <strong>한 편</strong>을 골라 위 열을 전부 채워 보세요.
+          "설계 요소" 칸에 시스템의 행동을 두 문장 이상 쓸 수 없다면, 그 논문은
+          내 설계에 별로 쓸모가 없다는 신호입니다.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        분석표의 "내 연구와의 관련" 칸이 비어 있는 논문이 몇 편인가? 절반이 넘으면 검색어를 다시 짠다.
+      </div>
+    </section>
+
+    <!-- ================= Q4 ================= -->
+    <section class="q" id="q4">
+      <div class="q__head">
+        <span class="q__n">질문 4</span>
+        <h2>교수학습이론은 내 에이전트에 어떻게 들어오는가?</h2>
+      </div>
+
+      <p>
+        이론은 보고서 앞부분을 채우는 장식이 아닙니다. 이론은
+        <strong>에이전트가 언제 무엇을 할지 정해주는 규칙의 출처</strong>입니다.
+        이론이 없으면 "언제 힌트를 줄까"를 감으로 정하게 됩니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>이론</th><th>핵심 주장</th><th>에이전트 행동으로 옮기면</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>근접발달영역 · 스캐폴딩</th>
+              <td>혼자서는 못 하지만 도움이 있으면 되는 구간에서 학습이 일어난다</td>
+              <td>도움의 수위를 단계로 두고, 학습자 반응에 따라 올리고 내린다</td>
+            </tr>
+            <tr>
+              <th>인지부하</th>
+              <td>작업기억 용량을 넘으면 학습이 멈춘다</td>
+              <td>한 번에 하나만 묻는다. 예시를 먼저 주고 점차 뺀다</td>
+            </tr>
+            <tr>
+              <th>생산적 실패</th>
+              <td>먼저 헤매본 뒤에 설명을 들으면 더 깊이 배운다</td>
+              <td>시도 전에는 답을 주지 않는다. 실패를 기록해 뒤에 연결한다</td>
+            </tr>
+            <tr>
+              <th>자기설명 효과</th>
+              <td>학습자가 스스로 설명할 때 이해가 정교해진다</td>
+              <td>"왜 그렇게 생각했나요?"를 규칙적으로 요구한다</td>
+            </tr>
+            <tr>
+              <th>형성평가 · 피드백</th>
+              <td>기준 대비 현재 위치와 다음 행동을 알려줄 때 효과가 있다</td>
+              <td>칭찬 대신 기준의 어느 항목이 왜 충족/미충족인지 말한다</td>
+            </tr>
+            <tr>
+              <th>자기조절학습</th>
+              <td>계획–점검–성찰의 순환이 학습을 좌우한다</td>
+              <td>시작 전 계획을 묻고, 끝난 뒤 성찰을 요구한다</td>
+            </tr>
+            <tr>
+              <th>인지적 도제</th>
+              <td>전문가의 사고 과정을 드러내 보이고 점차 넘긴다</td>
+              <td>모델링 → 코칭 → 페이딩 순서로 개입 방식을 바꾼다</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">이론 하나를 끝까지 밀어라</p>
+        <p>
+          일곱 개를 다 쓰면 아무것도 안 쓴 것과 같습니다. <strong>주 이론 하나</strong>를 정하고
+          그 이론이 요구하는 행동을 에이전트 전체에 일관되게 적용하세요. 보조 이론은
+          한두 개면 충분합니다. 6주차 전문가 타당화에서 "이 기능의 이론적 근거는
+          무엇입니까"라는 질문을 반드시 받습니다.
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 15분</p>
+        <p>
+          주 이론 하나를 고르고, 그 이론에서 나오는 <strong>에이전트 행동 규칙 세 개</strong>를
+          "만약 ~하면 에이전트는 ~한다" 형식으로 쓰세요. 이 문장들이 4주차 명세서의
+          뼈대가 됩니다.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내 주 이론을 뒷받침하는 논문이 문헌분석표에 몇 편 있는가? 한 편도 없으면 이론이 아니라 인상이다.
+      </div>
+    </section>
+
+    <!-- ================= Q5 ================= -->
+    <section class="q" id="q5">
+      <div class="q__head">
+        <span class="q__n">질문 5</span>
+        <h2>기존 AI 에이전트는 이미 무엇을 하고 있는가?</h2>
+      </div>
+
+      <p>
+        논문만 보면 실제로 어떻게 생겼는지 알 수 없습니다. 비슷한 목적의 서비스를
+        <strong>직접 써보고</strong> 분석표를 채우세요. 30분만 써봐도 논문 세 편보다 많은 것을
+        알게 되는 경우가 흔합니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>열</th><th>확인 방법</th></tr></thead>
+          <tbody>
+            <tr><th>ID · 이름</th><td>C1, C2 …</td></tr>
+            <tr><th>대상·목적</th><td>홍보 문구가 아니라 실제 화면 기준으로</td></tr>
+            <tr><th>역할</th><td>튜터 / 코치 / 동료 / 평가자 / 설계보조 / 시뮬레이션</td></tr>
+            <tr><th>자율성 단계</th><td>0–3 (1주차 기준)</td></tr>
+            <tr><th>상호작용 방식</th><td>대화형인가, 버튼형인가, 문서 첨삭형인가</td></tr>
+            <tr><th>스캐폴딩</th><td>바로 답을 주는가, 단계적으로 주는가 — <strong>일부러 모르는 척 물어볼 것</strong></td></tr>
+            <tr><th>피드백</th><td>기준이 보이는가, 근거를 대는가</td></tr>
+            <tr><th>교사 통제</th><td>교사용 화면·설정이 있는가</td></tr>
+            <tr><th>강점 / 약점</th><td>각 두 가지씩, 화면 캡처와 함께</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 30분 · 조별</p>
+        <p>
+          사례 <strong>2개</strong>를 각자 30분씩 실제로 써보고 표를 채우세요.
+          같은 질문을 던져 비교하면 차이가 선명해집니다. 예를 들어
+        </p>
+        <ul>
+          <li>"모르겠어요"라고만 말했을 때 무엇을 하는가</li>
+          <li>틀린 답을 자신 있게 제출하면 무엇을 하는가</li>
+          <li>주제와 무관한 것을 물으면 무엇을 하는가</li>
+          <li>같은 질문을 세 번 반복하면 무엇을 하는가</li>
+        </ul>
+        <p>
+          네 번째 질문에서 대부분의 서비스가 무너집니다. 그 지점이 여러분의 기회입니다.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내 사례분석표에 화면 캡처가 붙어 있는가? 없으면 "써봤다"가 아니라 "읽어봤다"이다.
+      </div>
+    </section>
+
+    <!-- ================= Q6 ================= -->
+    <section class="q" id="q6">
+      <div class="q__head">
+        <span class="q__n">질문 6</span>
+        <h2>그들이 못 한 것은 무엇인가?</h2>
+      </div>
+
+      <p>
+        연구 공백은 "아무도 안 했다"가 아닙니다. 그런 주제는 대개 할 가치가 없어서
+        안 한 것입니다. 좋은 공백은 <strong>많이 했는데 특정 지점이 비어 있는</strong> 곳입니다.
+        네 가지 유형이 있습니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>유형</th><th>문장 형태</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>대상 공백</th>
+              <td>"이 접근은 대학생에게는 검증됐으나 중학생 대상 연구는 드물다"</td>
+            </tr>
+            <tr>
+              <th>맥락 공백</th>
+              <td>"실험실 환경에서는 효과가 확인됐으나 교실 수업 안에서의 적용은 보고되지 않았다"</td>
+            </tr>
+            <tr>
+              <th>방법 공백</th>
+              <td>"성취도 향상은 측정됐으나 상호작용 과정 자체를 분석한 연구는 없다"</td>
+            </tr>
+            <tr>
+              <th>통합 공백</th>
+              <td>"스캐폴딩 연구와 LLM 에이전트 연구가 각각 진행됐을 뿐 결합된 설계는 제시되지 않았다"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">함정 · 과장된 공백</p>
+        <p>
+          "이 분야에 연구가 전혀 없다"고 쓰면 심사자가 반례를 하나만 들어도 신뢰를 잃습니다.
+          <strong>"제한적이다", "보고된 바가 드물다"</strong> 정도가 안전하고 정확합니다.
+          그리고 그 판단의 근거로 검색 건수를 제시하세요.
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 15분</p>
+        <p>
+          문헌분석표의 "한계" 열을 세로로 훑어보세요. 여러 논문에서 <strong>반복되는 한계</strong>가
+          있다면 그것이 가장 강한 공백 후보입니다. 네 유형 중 어디에 해당하는지 표시하고
+          한 문장으로 쓰세요.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내가 주장하는 공백을 반박할 논문을 내가 스스로 한 편 떠올릴 수 있는가? 떠오른다면 공백 진술을 좁혀야 한다.
+      </div>
+    </section>
+
+    <!-- ================= Q7 ================= -->
+    <section class="q" id="q7">
+      <div class="q__head">
+        <span class="q__n">질문 7</span>
+        <h2>내 연구의 자리는 어디인가?</h2>
+      </div>
+
+      <p>
+        이번 주의 결론은 표 두 개가 아니라 <strong>한 문단</strong>입니다.
+        이 문단이 최종 보고서 서론의 마지막 문단이 되고, 8주차 발표의 두 번째 슬라이드가 됩니다.
+      </p>
+
+      <div class="tpl">
+        <div class="tpl__bar">
+          <span class="tpl__name">포지셔닝 문단 틀</span>
+          <button class="copy" type="button">복사</button>
+        </div>
+<pre><code>[1] 현장 확인
+   요구 분석 결과, [학습자]는 [상황]에서 [어려움]을 겪는 것으로 나타났다.
+
+[2] 학계가 밝힌 것
+   선행 연구는 [이론/접근]이 [효과]가 있음을 보고해 왔다 (L2, L5, L9).
+
+[3] 비어 있는 곳
+   그러나 [대상/맥락/방법/통합] 측면에서 [무엇]은 아직 제한적이다.
+   기존 시스템(C1, C3) 역시 [무엇]까지만 제공한다.
+
+[4] 이 연구가 하는 일
+   본 연구는 [이론]에 근거해 [무엇]을 하는 AI 에이전트를 설계·개발하고
+   [누구]에게 [어떻게] 타당화한다.</code></pre>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">작성 예</p>
+        <p>
+          "요구 분석 결과, 중2 학습자는 주장하는 글의 개요를 짤 때 자신의 근거가 주장을
+          뒷받침하는지 판단하지 못하는 것으로 나타났다. 선행 연구는 논증 스캐폴딩이
+          근거의 질을 높인다고 보고해 왔다(L2, L5, L9). 그러나 대부분 종이 기반 도식이나
+          정해진 틀을 제공하는 데 그쳤고, 학습자의 개별 근거에 반응하는 설계는 드물었다.
+          기존 서비스(C1, C3) 역시 완성된 글을 첨삭할 뿐 개요 단계에는 개입하지 않는다.
+          본 연구는 생산적 실패와 형성적 피드백에 근거해, 개요 단계에서 학습자에게
+          근거의 적절성을 스스로 검토하게 하는 AI 에이전트를 설계·개발하고
+          전문가 5인과 학습자 8인에게 타당화한다."
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 15분</p>
+        <p>
+          위 틀로 네 문장을 쓰고, <strong>옆 사람에게 소리 내어 읽어 주세요.</strong>
+          듣는 사람이 "그래서 뭘 만드는 건데?"라고 되물으면 [4]가 부족한 것이고,
+          "그거 이미 있지 않아?"라고 하면 [3]이 부족한 것입니다.
+        </p>
+      </div>
+
+      <div class="box box--more">
+        <p class="box__t">다음 주로 넘길 질문</p>
+        <ul>
+          <li>요구(R)와 문헌(L)을 어떻게 하나의 설계원리로 묶는가? → 3주차</li>
+          <li>내 주 이론에서 나온 행동 규칙 세 개를 어떻게 원리 문장으로 만드는가? → 3주차</li>
+        </ul>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        네 문장 중 [3]에 문헌 ID가 붙어 있는가? 없으면 공백이 아니라 추측이다.
+      </div>
+    </section>
+
+    <!-- ================= 워크숍 ================= -->
+    <section class="q" id="workshop">
+      <div class="q__head">
+        <span class="q__n">워크숍</span>
+        <h2>분석표 두 장 만들기</h2>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl__bar">
+          <span class="tpl__name">문헌분석표 · 15편</span>
+          <button class="copy" type="button">복사</button>
+        </div>
+<pre><code># 문헌분석표
+
+## 검색 절차
+- 검색일:
+- DB:
+- 검색식:
+- 포함 기준 / 배제 기준:
+- 선정 흐름: 검색 __건 → 초록 __건 → 전문 __건 → 최종 15건
+
+## 분석표
+
+| ID | 서지 | 연구 목적 | 대상·규모 | 이론 | 설계 요소 | 측정 | 결과 | 한계 | 내 연구와의 관련 |
+|----|-----|---------|---------|-----|---------|-----|-----|-----|--------------|
+| L1 | | | | | | | | | |
+| L2 | | | | | | | | | |
+| …  | | | | | | | | | |
+| L15| | | | | | | | | |
+
+## 종합
+- 반복되는 이론:
+- 반복되는 설계 요소:
+- 반복되는 한계:  ← 공백 후보
+- 상충하는 결과가 있는 지점:</code></pre>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl__bar">
+          <span class="tpl__name">사례분석표 · 4개</span>
+          <button class="copy" type="button">복사</button>
+        </div>
+<pre><code># 사례분석표
+
+| ID | 이름 | 대상·목적 | 역할 | 자율성 | 상호작용 | 스캐폴딩 | 피드백 | 교사 통제 | 강점 | 약점 |
+|----|-----|---------|-----|-------|--------|--------|-------|---------|-----|-----|
+| C1 | | | | | | | | | | |
+| C2 | | | | | | | | | | |
+| C3 | | | | | | | | | | |
+| C4 | | | | | | | | | | |
+
+## 공통 시험 질문 (모든 사례에 동일하게)
+1. "모르겠어요"라고만 말했을 때 →
+2. 틀린 답을 자신 있게 제출하면 →
+3. 주제와 무관한 것을 물으면 →
+4. 같은 질문을 세 번 반복하면 →
+
+## 화면 캡처
+- C1: (첨부)
+- C2: (첨부)
+
+## 종합
+- 모두가 하는 것:
+- 아무도 안 하는 것:  ← 기회
+- 내가 다르게 할 것:</code></pre>
+      </div>
+
+      <h3>내려받아 쓰기</h3>
+
+      <div class="files">
+        <a href="https://github.com/ldgit99/classic/blob/main/templates/02-literature-matrix.md">
+          <span class="fn">02-literature-matrix.md</span>
+          <span class="fd">문헌분석표 + 검색 절차 기록</span>
+        </a>
+        <a href="https://github.com/ldgit99/classic/blob/main/templates/02-system-matrix.md">
+          <span class="fn">02-system-matrix.md</span>
+          <span class="fd">사례분석표 + 공통 시험 질문</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= 제출 ================= -->
+    <section class="q" id="submit">
+      <div class="q__head">
+        <span class="q__n">제출</span>
+        <h2>산출물과 평가 기준</h2>
+      </div>
+
+      <p>
+        <strong>문헌분석표(15편) · 사례분석표(4개) · 포지셔닝 문단</strong>을 하나의 문서로
+        3주차 수업 전까지 제출합니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>항목</th><th>미흡</th><th>보통</th><th>우수</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>검색 절차</th>
+              <td>절차 기술 없음</td><td>DB와 검색어만 제시</td>
+              <td>포함·배제 기준과 선정 흐름이 숫자로 재현 가능</td>
+            </tr>
+            <tr>
+              <th>문헌분석표</th>
+              <td>요약만 나열</td><td>표는 채웠으나 설계 요소가 추상적</td>
+              <td>설계 요소와 한계가 구체적이고 내 설계와 연결됨</td>
+            </tr>
+            <tr>
+              <th>이론</th>
+              <td>이론 언급 없음</td><td>이론을 나열만 함</td>
+              <td>주 이론이 정해지고 행동 규칙으로 번역됨</td>
+            </tr>
+            <tr>
+              <th>사례분석</th>
+              <td>홍보 문구를 옮겨 적음</td><td>써봤으나 비교 기준이 없음</td>
+              <td>동일 시험 질문으로 비교하고 증거(캡처)를 제시</td>
+            </tr>
+            <tr>
+              <th>공백 진술</th>
+              <td>없거나 과장됨</td><td>공백은 있으나 근거 연결이 약함</td>
+              <td>문헌·사례 ID로 뒷받침되고 범위가 적절함</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= 다음 주 ================= -->
+    <section class="wrap-up" id="next">
+      <h2>다음 주까지</h2>
+
+      <p>
+        3주차에는 지금까지 모은 두 뭉치 — 현장의 요구(R)와 문헌의 발견(L) — 을 합쳐
+        <strong>설계원리</strong>로 바꿉니다. 이번 주 표가 부실하면 다음 주에 만들 것이 없습니다.
+        표의 "한계"와 "설계 요소" 열을 특히 꼼꼼히 채워 오세요.
+      </p>
+
+      <h4>미리 해올 것</h4>
+      <ul>
+        <li>문헌분석표 15편 · 사례분석표 4개 (제출)</li>
+        <li>주 이론에서 뽑은 "만약 ~하면 ~한다" 행동 규칙 3개</li>
+        <li>포지셔닝 문단 4문장</li>
+      </ul>
+
+      <h4>읽을거리</h4>
+      <ul class="refs">
+        <li>
+          설계·개발연구에서 문헌 고찰이 설계원리로 이어지는 경로
+          <span class="src">Richey &amp; Klein, Design and Development Research, 2–3장</span>
+        </li>
+        <li>
+          스캐폴딩 개념이 컴퓨터 기반 학습환경에서 어떻게 구현되어 왔는가
+          <span class="src">검색어 예: computer-based scaffolding, meta-analysis</span>
+        </li>
+        <li>
+          자기 주 이론의 원전 1편 — 요약본이 아니라 원 논문으로
+          <span class="src">3주차에 이 논문의 핵심 주장을 한 문장으로 발표합니다</span>
+        </li>
+      </ul>
+
+      <a class="nextlink" href="week03.html">
+        <span>
+          <span class="k">다음</span>
+          <span class="v">3주 · 설계원리 도출</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </section>
+
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="foot__in">
+    <span>교육용 AI 에이전트 개발 · 2026학년도 2학기</span>
+    <span><a href="index.html">전체 주차 보기</a></span>
+  </div>
+</footer>
+
+<script src="assets/notes.js?v=3"></script>
+</body>
+</html>

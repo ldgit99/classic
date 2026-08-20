@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7주 사용성 평가 · 교육용 AI 에이전트 개발</title>
+<meta name="description" content="과제 설계와 씽크얼라우드, 로그·설문 분석과 문제 심각도 등급화를 다루는 7주차 강의 노트.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🔍</text></svg>">
+</head>
+<body>
+
+<a class="skip" href="#doc">본문으로 건너뛰기</a>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="index.html">교육용 AI 에이전트 개발<span class="brand__sub">2026-2 · 대학원</span></a>
+    <nav class="weeknav" aria-label="주차 이동">
+      <a href="week01.html">1주</a>
+      <a href="week02.html">2주</a>
+      <a href="week03.html">3주</a>
+      <a href="week04.html">4주</a>
+      <a href="week05.html">5주</a>
+      <a href="week06.html">6주</a>
+      <a href="week07.html" aria-current="page">7주</a>
+      <a href="week08.html">8주</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+
+  <aside class="rail">
+    <p class="rail__label">오늘의 질문</p>
+    <ol class="chain">
+      <li><a href="#q1"><span class="n">1</span><span>전문가 평가와 무엇이 다른가?</span></a></li>
+      <li><a href="#q2"><span class="n">2</span><span>누구에게 무엇을 시키나?</span></a></li>
+      <li><a href="#q3"><span class="n">3</span><span>무엇을 측정하는가?</span></a></li>
+      <li><a href="#q4"><span class="n">4</span><span>자료는 어디서 나오나?</span></a></li>
+      <li><a href="#q5"><span class="n">5</span><span>관찰을 어떻게 기록하나?</span></a></li>
+      <li><a href="#q6"><span class="n">6</span><span>결과를 어떻게 읽나?</span></a></li>
+      <li><a href="#q7"><span class="n">7</span><span>무엇을 고치고 남기나?</span></a></li>
+    </ol>
+    <div class="rail__foot">
+      <a href="#workshop">워크숍 · 템플릿</a>
+      <a href="#submit">제출 기준과 루브릭</a>
+      <a href="#next">다음 주 · 읽을거리</a>
+    </div>
+  </aside>
+
+  <main class="doc" id="doc">
+
+    <div class="head">
+      <p class="eyebrow">7주 · 사용성 평가</p>
+      <h1>실제로 쓰는 사람 앞에서</h1>
+      <p class="lede">
+        전문가가 옳다고 한 설계가 학습자에게도 통할까요. 이번 주에는 실제 사용자
+        앞에 프로토타입을 놓습니다. 대부분의 학생이 이 주에 가장 큰 충격을 받습니다 —
+        그리고 그 충격이 <em>이 연구에서 가장 값진 자료</em>입니다.
+      </p>
+
+      <dl class="meta">
+        <div><dt>산출물</dt><dd>평가 결과 · 최종 Prototype</dd></div>
+        <div><dt>수업</dt><dd>3시간</dd></div>
+        <div><dt>과제 시간</dt><dd>12–15시간</dd></div>
+        <div><dt>대상자</dt><dd>6–10명</dd></div>
+      </dl>
+
+      <div class="goals">
+        <h2>학습목표</h2>
+        <ol>
+          <li>사용성·유용성·교육적 적합성을 구분해 측정 계획을 세울 수 있다.</li>
+          <li>과제 기반 사용성 평가를 씽크얼라우드와 함께 실시할 수 있다.</li>
+          <li>발견된 문제를 심각도로 등급화하고 수정 우선순위를 정할 수 있다.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ================= Q1 ================= -->
+    <section class="q" id="q1">
+      <div class="q__head">
+        <span class="q__n">질문 1</span>
+        <h2>사용성 평가는 전문가 평가와 무엇이 다른가?</h2>
+      </div>
+
+      <p>
+        가장 큰 차이는 <strong>말을 듣는 것이 아니라 행동을 보는 것</strong>입니다.
+        전문가에게는 의견을 물었지만, 사용자에게는 <strong>과제를 시킵니다.</strong>
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th></th><th>전문가 타당화</th><th>사용성 평가</th></tr></thead>
+          <tbody>
+            <tr><th>참여자가 하는 일</th><td>읽고 판단한다</td><td>과제를 수행한다</td></tr>
+            <tr><th>주된 자료</th><td>평정과 서술</td><td>행동 관찰, 로그, 발화</td></tr>
+            <tr><th>내가 하는 일</th><td>평가지를 보낸다</td><td>옆에서 지켜보고 기록한다</td></tr>
+            <tr><th>가장 값진 순간</th><td>날카로운 지적</td><td>참여자가 <strong>막혀서 멈추는 순간</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">함정 · "어떠셨어요?"만 묻기</p>
+        <p>
+          평가가 끝나고 "써 보니 어떠셨어요?"라고 물으면 대부분 "좋았어요"라고 합니다.
+          예의 때문이기도 하고, 자기가 어디서 헤맸는지 스스로 기억하지 못하기 때문이기도
+          합니다. <strong>여러분이 옆에서 본 것이 참여자가 말하는 것보다 정확합니다.</strong>
+          관찰 기록을 반드시 남기세요.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내 평가 계획에 "참여자가 무엇을 하는지 지켜보는 시간"이 들어 있는가?
+      </div>
+    </section>
+
+    <!-- ================= Q2 ================= -->
+    <section class="q" id="q2">
+      <div class="q__head">
+        <span class="q__n">질문 2</span>
+        <h2>누구에게, 몇 명에게, 어떤 과제를 주는가?</h2>
+      </div>
+
+      <h3>누구에게</h3>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>우선순위</th><th>대상</th><th>주의</th></tr></thead>
+          <tbody>
+            <tr><th>1</th><td>실제 대상 학습자</td><td>가장 좋다. 미성년자면 보호자 동의 필수</td></tr>
+            <tr><th>2</th><td>대리 사용자 — 같은 과제를 해본 적 있는 사람</td><td>선행지식 수준이 다르다는 점을 한계로 명시</td></tr>
+            <tr><th>3</th><td>동료 대학원생</td><td>최후의 수단. 결과 해석에 큰 제약이 생긴다</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">대리 사용자를 쓸 때</p>
+        <p>
+          8주 과정에서 실제 학교 학습자를 만나기 어려운 경우가 많습니다.
+          대리 사용자를 쓰되 <strong>어떤 점이 다른지 명시</strong>하세요. 예를 들어
+          "학부생을 대상으로 했으므로 중2 학습자보다 선행지식이 높다. 따라서 본 결과는
+          인터페이스 사용성에 대해서는 유효하나, 스캐폴딩 수위의 적절성에 대해서는
+          제한적으로 해석해야 한다." 이 한 문단이 연구의 신뢰도를 지킵니다.
+        </p>
+      </div>
+
+      <h3>몇 명에게</h3>
+
+      <p>
+        "5명이면 문제의 대부분을 찾는다"는 말이 널리 인용되지만, 이는
+        <strong>같은 과제를 하는 동질적 사용자 집단</strong>을 전제한 이야기입니다.
+        학습자는 선행지식 차이가 커서 다르게 막힙니다.
+        <strong>6–10명</strong>을 권하고, 수준이 다양하게 섞이도록 뽑으세요.
+      </p>
+
+      <h3>어떤 과제를 주는가</h3>
+
+      <p>
+        "한번 써 보세요"는 과제가 아닙니다. 과제는 <strong>목표가 있고, 끝이 있고,
+        성공을 판정할 수 있어야</strong> 합니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th></th><th>과제 진술</th></tr></thead>
+          <tbody>
+            <tr><th>나쁨</th><td>"에이전트와 대화해 보세요."</td></tr>
+            <tr>
+              <th>좋음</th>
+              <td>"'교복 자율화에 찬성한다'는 주장에 대한 근거를 두 개 만들어야 합니다. 이 도구를 써서 근거 두 개를 완성해 주세요. 완성했다고 생각되면 말씀해 주세요."</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">과제 카드 3–4장이면 충분하다</p>
+        <p>
+          한 명당 30–40분이 한계입니다. 그 안에 도입 5분, 과제 20–25분,
+          사후 인터뷰·설문 10분이 들어갑니다. 과제는 3–4개, 각 5–8분짜리로 만드세요.
+          <strong>첫 과제는 반드시 쉬운 것</strong>으로 — 참여자가 긴장을 풀어야
+          이후 관찰이 유효해집니다.
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 25분</p>
+        <p>
+          과제 카드 3장을 쓰고, 각 카드에 <strong>성공 판정 기준</strong>을 적으세요.
+          "근거 두 개를 스스로 작성했으면 성공, 에이전트의 문장을 그대로 옮겼으면 실패"
+          같은 식으로. 기준이 없으면 나중에 완료율을 계산할 수 없습니다.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내 과제를 처음 보는 사람이 설명 없이 이해할 수 있는가?
+      </div>
+    </section>
+
+    <!-- ================= Q3 ================= -->
+    <section class="q" id="q3">
+      <div class="q__head">
+        <span class="q__n">질문 3</span>
+        <h2>무엇을 측정하는가?</h2>
+      </div>
+
+      <p>
+        교육용 도구는 세 축으로 봅니다. <strong>사용성이 좋아도 교육적으로 나쁠 수 있고,
+        그 반대도 가능합니다.</strong> 따로 재세요.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>축</th><th>묻는 것</th><th>지표</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>사용성</th>
+              <td>쓰기 쉬운가</td>
+              <td>과제 완료율, 소요 시간, 오류 횟수, 도움 요청 횟수, SUS 점수</td>
+            </tr>
+            <tr>
+              <th>유용성</th>
+              <td>쓸 만한가, 또 쓰겠는가</td>
+              <td>지각된 유용성 문항, 재사용 의사, 어떤 상황에 쓰겠는지</td>
+            </tr>
+            <tr>
+              <th>교육적 적합성</th>
+              <td>실제로 배우게 하는가</td>
+              <td>자기설명 발화 수, 스스로 수정한 횟수, 산출물의 질, 정답 요구 빈도</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">교육적 적합성은 설계원리에서 나온다</p>
+        <p>
+          이 축의 지표는 남의 것을 빌려 올 수 없습니다. 4주차 명세서 6.1에서
+          <strong>원리마다 지표 하나</strong>를 정해 두었습니다. 그것을 그대로 쓰세요.
+          원리가 "스스로 시도하기 전에는 답을 주지 않는다"였다면, 지표는
+          <strong>"첫 힌트 전까지 학습자가 시도한 횟수"</strong>이고 이 값은 로그에서 바로 나옵니다.
+        </p>
+      </div>
+
+      <h3>SUS를 쓴다면</h3>
+
+      <p>
+        시스템 사용성 척도(SUS)는 10문항 5점 척도의 표준 도구입니다. 짧고,
+        다른 연구와 비교할 수 있어서 널리 쓰입니다. 계산법은 이렇습니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>단계</th><th>계산</th></tr></thead>
+          <tbody>
+            <tr><td>홀수 문항 (1,3,5,7,9)</td><td>응답값 − 1</td></tr>
+            <tr><td>짝수 문항 (2,4,6,8,10)</td><td>5 − 응답값</td></tr>
+            <tr><td>합계</td><td>위 값들을 모두 더한다 (0–40)</td></tr>
+            <tr><td>최종 점수</td><td>합계 × 2.5 (0–100)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        점수 <strong>68 내외가 평균</strong>으로 통용됩니다. 다만 SUS는 백분율이 아니고
+        학습 효과를 재지도 않습니다. <strong>사용성 축의 한 지표일 뿐</strong>이라는 점을
+        보고서에 밝히세요.
+      </p>
+
+      <div class="box box--warn">
+        <p class="box__t">함정 · 만족도만 재기</p>
+        <p>
+          만족도가 높은데 학습은 일어나지 않는 도구가 많습니다. 답을 바로 주는
+          에이전트가 대표적입니다. <strong>만족도와 교육적 지표를 나란히 놓고</strong>
+          해석하세요. 둘이 어긋나는 지점이 이 연구에서 가장 할 말이 많은 부분입니다.
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 15분</p>
+        <p>
+          세 축에 각각 지표 2–3개씩을 배치하고, 각 지표에 대해
+          <strong>"이 값은 어디서 나오는가"</strong>를 적으세요. 로그 / 설문 / 관찰 기록 /
+          산출물. 출처가 없는 지표는 잴 수 없습니다.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        교육적 적합성 지표가 내 설계원리와 연결되어 있는가?
+      </div>
+    </section>
+
+    <!-- ================= Q4 ================= -->
+    <section class="q" id="q4">
+      <div class="q__head">
+        <span class="q__n">질문 4</span>
+        <h2>데이터는 어디서 나오는가?</h2>
+      </div>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>출처</th><th>얻는 것</th><th>준비할 것</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>대화 로그</th>
+              <td>턴 수, 시도 횟수, 힌트 수위 변화, 정책 발동</td>
+              <td>5주차 로그 스키마가 작동하는지 확인</td>
+            </tr>
+            <tr>
+              <th>관찰 기록</th>
+              <td>막히는 순간, 표정, 되돌아가기, 포기</td>
+              <td>기록지, 시간 기록 방법</td>
+            </tr>
+            <tr>
+              <th>씽크얼라우드</th>
+              <td>왜 그렇게 했는지</td>
+              <td>녹음 동의, 연습용 준비 과제</td>
+            </tr>
+            <tr>
+              <th>사후 설문</th>
+              <td>SUS, 유용성, 재사용 의사</td>
+              <td>10–15문항, 5분 안에 끝날 것</td>
+            </tr>
+            <tr>
+              <th>사후 인터뷰</th>
+              <td>관찰한 장면의 이유</td>
+              <td>5분. 그 자리에서 본 장면을 짚어 묻는다</td>
+            </tr>
+            <tr>
+              <th>산출물</th>
+              <td>실제로 만든 결과의 질</td>
+              <td>평가 기준 (4주차 것 재사용)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">먼저 · 로그가 정말 남는지 확인하라</p>
+        <p>
+          평가를 다 하고 나서 로그 파일이 비어 있는 것을 발견하는 일이 실제로 일어납니다.
+          <strong>첫 참여자를 만나기 전에 스스로 한 세션을 끝까지 해보고
+          로그 파일을 열어 확인하세요.</strong> 5분이면 됩니다.
+        </p>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">연구윤리 · 이번 주가 가장 중요하다</p>
+        <ul>
+          <li>동의서 — 미성년자는 보호자 동의 포함</li>
+          <li>녹음·화면 녹화 여부를 사전에 별도로 동의받기</li>
+          <li>참여자 코드(U1, U2 …)로 즉시 익명화</li>
+          <li>대화 로그에 실명·학교명이 들어갔다면 분석 전에 제거</li>
+          <li>언제든 중단할 수 있고 성적과 무관함을 명시</li>
+          <li>자료 보관 위치와 삭제 시점을 정해 두기</li>
+        </ul>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        지금 로그 파일을 열어 보라. 상태값이 기록되고 있는가?
+      </div>
+    </section>
+
+    <!-- ================= Q5 ================= -->
+    <section class="q" id="q5">
+      <div class="q__head">
+        <span class="q__n">질문 5</span>
+        <h2>관찰을 어떻게 기록하는가?</h2>
+      </div>
+
+      <h3>씽크얼라우드</h3>
+
+      <p>
+        참여자에게 <strong>생각을 소리 내어 말하면서</strong> 과제를 하게 하는 방법입니다.
+        어색해하는 것이 정상이므로 준비 운동이 필요합니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>단계</th><th>진행자가 할 일</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>설명</th>
+              <td>"떠오르는 생각을 그대로 말해 주세요. 저에게 설명하실 필요는 없고, 혼잣말처럼 하시면 됩니다."</td>
+            </tr>
+            <tr>
+              <th>연습</th>
+              <td>관계없는 짧은 과제로 1분 연습 (예: "이 화면에서 로그인 버튼을 찾아보세요")</td>
+            </tr>
+            <tr>
+              <th>과제 중</th>
+              <td>침묵이 10초 넘으면 <strong>"지금 무슨 생각 하고 계세요?"</strong>만 묻는다</td>
+            </tr>
+            <tr>
+              <th>절대 금지</th>
+              <td>힌트 주기, 조작 대신 해주기, "아 그건 이렇게 하시면 돼요"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">가장 어려운 것 · 도와주고 싶은 마음 참기</p>
+        <p>
+          참여자가 헤매는 것을 보면 반사적으로 도와주게 됩니다. 그 순간
+          <strong>가장 중요한 자료가 사라집니다.</strong> 참여자가 막힌 채로 있는 시간이
+          여러분이 고쳐야 할 지점을 정확히 알려줍니다. 정말 힘들어하면
+          "이 부분은 넘어가셔도 됩니다"라고만 하고 다음 과제로 넘기세요.
+        </p>
+      </div>
+
+      <h3>관찰 기록지</h3>
+
+      <div class="tpl">
+        <div class="tpl__bar">
+          <span class="tpl__name">관찰 기록지</span>
+          <button class="copy" type="button">복사</button>
+        </div>
+<pre><code># 사용성 평가 관찰 기록
+
+참여자 코드: U__ · 일시: · 진행자: · 소요 시간:
+배경: 학년/전공 __ · 유사 도구 사용 경험 (있음/없음)
+
+## 과제별 기록
+
+### T1. [과제 내용]
+시작 __:__  종료 __:__  (소요 __분)
+성공 여부: 성공 / 도움받아 성공 / 실패
+도움 요청 횟수: __회
+
+| 시각 | 관찰한 행동 | 참여자 발화 | 내 해석 |
+|-----|----------|-----------|--------|
+| 02:15 | 같은 문장을 세 번 다시 씀 | "이게 근거가 맞나…" | 기준을 못 찾음 |
+
+막힌 지점:
+예상과 달랐던 점:
+
+### T2. …
+### T3. …
+
+## 사후 인터뷰 (5분)
+관찰한 장면을 짚어 묻는다.
+- "아까 __분쯤에 __하셨는데, 그때 무슨 생각이셨어요?"
+- "이 도구가 도움이 됐다면 어느 부분에서였나요?"
+- "다시 쓴다면 무엇이 달라졌으면 하나요?"
+- "친구에게 추천하시겠어요? 어떤 친구에게요?"
+
+## 진행자 메모
+- 이번 세션에서 가장 놀란 순간:
+- 다음 참여자에게 바꿔서 해볼 것:</code></pre>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">한 명 끝날 때마다 5분 정리</p>
+        <p>
+          다음 참여자를 바로 부르지 말고 <strong>5분간 기록을 정리</strong>하세요.
+          기억은 30분이면 흐려집니다. 특히 "가장 놀란 순간"을 그 자리에서 한 줄로
+          적어 두면, 나중에 여덟 명의 기록을 볼 때 패턴이 훨씬 빨리 보입니다.
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 30분 · 조별</p>
+        <p>
+          조원을 참여자로 삼아 <strong>예행연습 1회</strong>를 하세요.
+          진행 순서가 매끄러운지, 과제 설명이 이해되는지, 기록지가 쓸 만한지 확인합니다.
+          예행연습에서 발견한 문제는 대개 실제 참여자에게서도 그대로 나타납니다.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        예행연습에서 내가 참여자를 도와주지 않고 버틸 수 있었는가?
+      </div>
+    </section>
+
+    <!-- ================= Q6 ================= -->
+    <section class="q" id="q6">
+      <div class="q__head">
+        <span class="q__n">질문 6</span>
+        <h2>결과를 어떻게 읽는가?</h2>
+      </div>
+
+      <p>
+        여덟 명의 기록에서 40–60개의 문제가 나옵니다. 전부 고칠 수 없으므로
+        <strong>등급을 매겨 순서를 정합니다.</strong>
+      </p>
+
+      <h3>문제 심각도 등급</h3>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>등급</th><th>의미</th><th>조치</th></tr></thead>
+          <tbody>
+            <tr><td class="num">0</td><td>문제가 아님 — 개인 취향</td><td>기록만</td></tr>
+            <tr><td class="num">1</td><td>사소함 — 거슬리지만 과제는 완수</td><td>시간 남으면</td></tr>
+            <tr><td class="num">2</td><td>보통 — 시간이 더 걸리거나 우회함</td><td>고친다</td></tr>
+            <tr><td class="num">3</td><td>심각 — 과제를 못 끝내거나 잘못 끝냄</td><td>반드시 고친다</td></tr>
+            <tr><td class="num">4</td><td>치명적 — 학습에 해롭거나 신뢰를 잃음</td><td>최우선</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        등급을 매길 때는 <strong>빈도</strong>(몇 명에게서 나왔는가)와
+        <strong>영향</strong>(얼마나 나쁜가)을 함께 봅니다. 한 명에게만 나왔어도
+        학습에 해로운 것이면 4등급입니다.
+      </p>
+
+      <div class="box box--eg">
+        <p class="box__t">교육용에서 4등급이 되는 것들</p>
+        <ul>
+          <li>학습자가 에이전트의 문장을 그대로 복사해 제출했다 — 설계 목적이 무너짐</li>
+          <li>에이전트가 틀린 내용을 확신 있게 말하고 학습자가 그대로 믿었다</li>
+          <li>학습자가 반복해서 답을 요구하다 포기하고 창을 닫았다</li>
+          <li>에이전트가 학습자를 평가하는 말을 했다("이해력이 좀 부족하시네요")</li>
+        </ul>
+        <p>
+          이런 장면은 한 번만 나와도 보고서 논의에서 비중 있게 다뤄야 합니다.
+        </p>
+      </div>
+
+      <h3>로그로 원리를 확인한다</h3>
+
+      <p>
+        관찰과 별도로, 로그에서 <strong>설계원리가 실제로 작동했는지</strong>를 셉니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>원리</th><th>로그에서 세는 것</th><th>결과 예</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>P2 · 시도 전 해답 금지</td>
+              <td>해답 요구 대비 거절 비율</td>
+              <td>23회 중 21회 거절 (91%)</td>
+            </tr>
+            <tr>
+              <td>P3 · 스캐폴딩 페이딩</td>
+              <td>수위가 내려간 세션 비율</td>
+              <td>8세션 중 3세션 (38%) — 낮다</td>
+            </tr>
+            <tr>
+              <td>P1 · 기준 제시</td>
+              <td>기준 인용을 포함한 피드백 비율</td>
+              <td>피드백 47회 중 40회 (85%)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">위 표를 어떻게 읽는가</p>
+        <p>
+          P3의 38%는 <strong>페이딩이 잘 안 됐다</strong>는 뜻입니다. 그런데 원인이 둘일 수
+          있습니다. ① 페이딩 조건이 너무 까다로워 발동하지 않았다 ② 학습자가 기준을
+          충족할 만큼 진도를 못 나갔다. 로그와 관찰 기록을 함께 봐야 구별됩니다.
+          이런 분석이 8주차 논의 절의 알맹이가 됩니다.
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 30분</p>
+        <p>
+          문제 목록을 만들고 등급을 매긴 뒤 <strong>3–4등급만 따로 뽑으세요.</strong>
+          그 목록이 남은 시간에 고칠 것 전부입니다. 1–2등급은 보고서의
+          "향후 개선 사항"으로 갑니다.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내가 매긴 등급을 조원이 봐도 같은 등급을 줄까?
+      </div>
+    </section>
+
+    <!-- ================= Q7 ================= -->
+    <section class="q" id="q7">
+      <div class="q__head">
+        <span class="q__n">질문 7</span>
+        <h2>무엇을 고치고 무엇을 남기는가?</h2>
+      </div>
+
+      <p>
+        남은 시간은 며칠입니다. 다 고칠 수 없다는 것이 문제가 아니라,
+        <strong>무엇을 왜 안 고쳤는지 쓰지 않는 것</strong>이 문제입니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>판정</th><th>기준</th><th>보고서에서의 위치</th></tr></thead>
+          <tbody>
+            <tr><th>이번에 고침</th><td>3–4등급이고 며칠 안에 가능</td><td>결과 — 최종 프로토타입</td></tr>
+            <tr><th>부분 수정</th><td>3–4등급이나 완전 해결은 어려움</td><td>결과 + 한계</td></tr>
+            <tr><th>설계 재검토 필요</th><td>원리 자체를 흔드는 발견</td><td><strong>논의</strong> — 가장 중요한 절</td></tr>
+            <tr><th>향후 과제</th><td>1–2등급 또는 범위 밖</td><td>결론 — 향후 연구</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">"설계 재검토 필요"가 나오면 좋은 것이다</p>
+        <p>
+          예를 들어 여덟 명 중 여섯 명이 세 번째 턴에서 답답해하며 이탈했다면,
+          이것은 버그가 아니라 <strong>설계원리의 조건이 잘못 설정됐다</strong>는 신호입니다.
+          6주차에 E3이 지적했지만 원리와 충돌한다며 미반영했던 그 항목일 수도 있습니다.
+        </p>
+        <p>
+          이럴 때 원리를 서둘러 뒤집지 마세요. <strong>"P2는 유지하되 시도 판정 기준을
+          완화해야 한다"</strong>처럼 원리와 지침을 구분해 다루고, 그 판단 과정을
+          논의 절에 쓰세요. 8주차 발표에서 심사자가 가장 흥미로워하는 부분입니다.
+        </p>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">마지막 수정 후에도 테스트하라</p>
+        <p>
+          급하게 고치다가 잘 되던 것이 깨지는 일이 흔합니다. 5주차의 네 시나리오를
+          <strong>최종 제출 전에 한 번 더</strong> 돌리세요. 20분입니다.
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 이번 주 과제</p>
+        <p>
+          3–4등급 문제를 고쳐 최종 프로토타입을 만들고, <strong>수정 전후를 같은 과제로
+          비교</strong>해 보세요. 가능하면 참여자 한 명에게 다시 부탁해 짧게 확인하면
+          가장 좋습니다.
+        </p>
+      </div>
+
+      <div class="box box--more">
+        <p class="box__t">다음 주로 넘길 질문</p>
+        <ul>
+          <li>여덟 주의 작업을 어떻게 하나의 이야기로 만드는가? → 8주차</li>
+          <li>결과를 어떻게 보여줘야 설득력이 있는가? → 8주차</li>
+          <li>2분 시연을 어떻게 설계하는가? → 8주차</li>
+        </ul>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        고치지 않기로 한 문제에 이유가 적혀 있는가?
+      </div>
+    </section>
+
+    <!-- ================= 워크숍 ================= -->
+    <section class="q" id="workshop">
+      <div class="q__head">
+        <span class="q__n">워크숍</span>
+        <h2>이번 주 진행 순서</h2>
+      </div>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>일차</th><th>할 일</th></tr></thead>
+          <tbody>
+            <tr><th>수업 당일</th><td>과제 카드·설문·기록지 완성 → 조별 예행연습 → 수정 → <strong>대상자 일정 확정</strong></td></tr>
+            <tr><th>1일차</th><td>로그 작동 확인 → 첫 참여자 1–2명. 여기서 절차를 다듬는다</td></tr>
+            <tr><th>2–4일차</th><td>나머지 참여자 6–8명. 한 명 끝날 때마다 5분 정리</td></tr>
+            <tr><th>5일차</th><td>로그 집계 → 문제 목록화 → 심각도 등급</td></tr>
+            <tr><th>6–7일차</th><td>3–4등급 수정 → 네 시나리오 재테스트 → 결과 정리</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">첫 두 명은 예비 실시로 생각하라</p>
+        <p>
+          첫 참여자에게서는 도구의 문제보다 <strong>진행 절차의 문제</strong>가 더 많이
+          나옵니다. 설명이 부족했거나, 과제 순서가 이상했거나. 절차를 고쳤다면
+          그 사실을 기록하고, 앞뒤 자료를 어떻게 다뤘는지 보고서에 밝히세요.
+        </p>
+      </div>
+
+      <h3>내려받아 쓰기</h3>
+
+      <div class="files">
+        <a href="https://github.com/ldgit99/classic/blob/main/templates/07-usability-protocol.md">
+          <span class="fn">07-usability-protocol.md</span>
+          <span class="fd">진행 대본 · 과제 카드 · 관찰 기록지</span>
+        </a>
+        <a href="https://github.com/ldgit99/classic/blob/main/templates/07-findings.md">
+          <span class="fn">07-findings.md</span>
+          <span class="fd">문제 목록 · 심각도 등급 · 로그 집계표</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= 제출 ================= -->
+    <section class="q" id="submit">
+      <div class="q__head">
+        <span class="q__n">제출</span>
+        <h2>산출물과 평가 기준</h2>
+      </div>
+
+      <p>
+        <strong>사용성 평가 결과 + 최종 Prototype</strong>을 8주차 수업 전까지 제출합니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>항목</th><th>미흡</th><th>보통</th><th>우수</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>평가 설계</th>
+              <td>"써 보게 했다" 수준</td><td>과제는 있으나 성공 기준이 없음</td>
+              <td>과제·기준·절차가 재현 가능하게 기술됨</td>
+            </tr>
+            <tr>
+              <th>자료 수집</th>
+              <td>설문만</td><td>설문 + 로그</td>
+              <td>로그·관찰·발화·설문·산출물을 함께 사용</td>
+            </tr>
+            <tr>
+              <th>세 축 측정</th>
+              <td>만족도만</td><td>사용성 위주</td>
+              <td>교육적 적합성 지표가 설계원리와 연결됨</td>
+            </tr>
+            <tr>
+              <th>문제 분석</th>
+              <td>문제 나열</td><td>등급은 있으나 근거가 약함</td>
+              <td>빈도와 영향으로 등급화하고 원인을 자료로 뒷받침</td>
+            </tr>
+            <tr>
+              <th>수정과 한계</th>
+              <td>수정 없음</td><td>고친 것만 제시</td>
+              <td>고친 것·못 고친 것·재검토 필요를 구분해 기술</td>
+            </tr>
+            <tr>
+              <th>연구윤리</th>
+              <td>언급 없음</td><td>동의만 언급</td>
+              <td>동의·익명화·녹음·보관·삭제가 구체적으로 기술됨</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= 다음 주 ================= -->
+    <section class="wrap-up" id="next">
+      <h2>다음 주까지</h2>
+
+      <p>
+        8주차에는 여덟 주의 작업을 <strong>하나의 연구</strong>로 묶어 발표합니다.
+        자료는 이미 다 있습니다. 남은 일은 그것을 읽을 수 있는 이야기로 만드는 것입니다.
+      </p>
+
+      <h4>미리 해올 것</h4>
+      <ul>
+        <li>사용성 평가 결과 · 최종 Prototype (제출)</li>
+        <li><strong>이 연구를 한 문장으로</strong> 써 오기 — 발표의 첫 슬라이드가 됩니다</li>
+        <li>가장 인상적인 대화 로그 발췌 2–3개 (익명화 완료)</li>
+        <li>GitHub 저장소 정리 — 명세서, 코드, 자료, README</li>
+      </ul>
+
+      <h4>읽을거리</h4>
+      <ul class="refs">
+        <li>
+          설계·개발연구의 결과를 어떻게 구조화해 보고하는가
+          <span class="src">Richey &amp; Klein, Design and Development Research — 보고 부분</span>
+        </li>
+        <li>
+          자기 분야 학술지에 실린 개발 연구 논문 <strong>1편</strong>의 결과·논의 절만 읽고 오기
+          <span class="src">표와 그림을 어떻게 배치했는지 특히 눈여겨볼 것</span>
+        </li>
+      </ul>
+
+      <a class="nextlink" href="week08.html">
+        <span>
+          <span class="k">다음</span>
+          <span class="v">8주 · 연구 결과 발표</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </section>
+
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="foot__in">
+    <span>교육용 AI 에이전트 개발 · 2026학년도 2학기</span>
+    <span><a href="index.html">전체 주차 보기</a></span>
+  </div>
+</footer>
+
+<script src="assets/notes.js?v=3"></script>
+</body>
+</html>
