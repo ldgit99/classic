@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ko" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1주 요구 분석 · 교육용 AI 에이전트 개발</title>
+<meta name="description" content="AI 에이전트의 정의부터 해결할 교육문제 진술과 요구 도출까지, 1주차 강의 노트.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
+</head>
+<body>
+
+<a class="skip" href="#doc">본문으로 건너뛰기</a>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="index.html">교육용 AI 에이전트 개발<span class="brand__sub">2026-2 · 대학원</span></a>
+    <nav class="weeknav" aria-label="주차 이동">
+      <a href="week01.html" aria-current="page">1주</a>
+      <a href="week02.html" class="is-todo">2주</a>
+      <a href="week03.html" class="is-todo">3주</a>
+      <a href="week04.html" class="is-todo">4주</a>
+      <a href="week05.html" class="is-todo">5주</a>
+      <a href="week06.html" class="is-todo">6주</a>
+      <a href="week07.html" class="is-todo">7주</a>
+      <a href="week08.html" class="is-todo">8주</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+
+  <aside class="rail">
+    <p class="rail__label">오늘의 질문</p>
+    <ol class="chain">
+      <li><a href="#q1"><span class="n">1</span><span>AI 에이전트란 무엇인가?</span></a></li>
+      <li><a href="#q2"><span class="n">2</span><span>생성형 AI와 무엇이 다른가?</span></a></li>
+      <li><a href="#q3"><span class="n">3</span><span>교육에서 무엇을 할 수 있는가?</span></a></li>
+      <li><a href="#q4"><span class="n">4</span><span>좋은 것은 무엇이 다른가?</span></a></li>
+      <li><a href="#q5"><span class="n">5</span><span>내 교육문제는 무엇인가?</span></a></li>
+      <li><a href="#q6"><span class="n">6</span><span>학습자는 어디서 막히는가?</span></a></li>
+      <li><a href="#q7"><span class="n">7</span><span>어떤 에이전트가 필요한가?</span></a></li>
+    </ol>
+    <div class="rail__foot">
+      <a href="#workshop">워크숍 · 템플릿</a>
+      <a href="#submit">제출 기준과 루브릭</a>
+      <a href="#next">다음 주 · 읽을거리</a>
+    </div>
+  </aside>
+
+  <main class="doc" id="doc">
+
+    <div class="head">
+      <p class="eyebrow">1주 · 요구 분석</p>
+      <h1>무엇을, 왜 만들 것인가</h1>
+      <p class="lede">
+        이번 학기에 여러분은 교육용 AI 에이전트를 하나 만들고, 그것이 쓸 만하다는 것을 증거로
+        보여야 합니다. 그 출발점은 코드도 아이디어도 아니고 <em>문제</em>입니다. 오늘은
+        만들 대상을 정하는 대신, 무엇이 잘 안 되고 있는지를 남이 납득할 만한 언어로 적는 법을
+        연습합니다.
+      </p>
+
+      <dl class="meta">
+        <div><dt>산출물</dt><dd>요구분석 보고서</dd></div>
+        <div><dt>수업</dt><dd>3시간</dd></div>
+        <div><dt>과제 시간</dt><dd>4–6시간</dd></div>
+        <div><dt>제출</dt><dd>2주차 수업 전까지</dd></div>
+      </dl>
+
+      <div class="goals">
+        <h2>학습목표</h2>
+        <ol>
+          <li>AI 에이전트를 생성형 AI와 구분해 정의하고, 어떤 시스템이 에이전트인지 판별할 수 있다.</li>
+          <li>해결하려는 교육문제를 학습자·상황·증거의 언어로 진술할 수 있다.</li>
+          <li>요구를 확인할 자료 수집 도구(인터뷰 프로토콜 또는 설문)를 설계할 수 있다.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ================= Q1 ================= -->
+    <section class="q" id="q1">
+      <div class="q__head">
+        <span class="q__n">질문 1</span>
+        <h2>AI 에이전트란 무엇인가?</h2>
+      </div>
+
+      <p>
+        요즘 "AI 에이전트"라는 말이 너무 넓게 쓰여서, 챗봇에 버튼 하나 붙여놓고 에이전트라고
+        부르는 경우도 흔합니다. 연구에서는 이 말을 느슨하게 쓸 수 없습니다. 무엇을 만들었는지
+        정확히 규정해야 무엇을 평가할지도 정해지기 때문입니다.
+      </p>
+
+      <div class="define">
+        <b>AI 에이전트</b>는 사람이 준 <b>목표</b>를 받아, 무엇을 할지 <b>스스로 판단</b>하고,
+        필요한 <b>도구</b>를 써서, 여러 단계에 걸쳐 <b>상태를 유지</b>하며 결과를 만들어 내는
+        시스템이다.
+      </div>
+
+      <h3>네 가지 구성 요소</h3>
+
+      <div class="tw">
+        <table>
+          <thead>
+            <tr><th>요소</th><th>뜻</th><th>이것이 없으면</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>목표</th>
+              <td>한 번의 질문이 아니라 달성해야 할 상태가 주어진다. "이 학생이 분수 나눗셈의 원리를 스스로 설명하게 하라."</td>
+              <td>지시를 받아 한 번 응답하는 도구</td>
+            </tr>
+            <tr>
+              <th>자율성</th>
+              <td>다음 행동을 스스로 고른다. 질문을 더 할지, 힌트를 줄지, 다른 문제로 넘어갈지 판단한다.</td>
+              <td>정해진 순서를 따르는 시나리오 프로그램</td>
+            </tr>
+            <tr>
+              <th>도구</th>
+              <td>모델 바깥의 것을 쓴다. 자료 검색, 채점기, 계산기, 학습 기록 저장소.</td>
+              <td>제 머릿속 지식만 말하는 화자</td>
+            </tr>
+            <tr>
+              <th>상태</th>
+              <td>지난 턴에 무슨 일이 있었는지 들고 간다. 학습자가 어디서 틀렸는지 기억한다.</td>
+              <td>매번 처음 만나는 상대</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">같은 요청, 다른 시스템</p>
+        <p><strong>학습자:</strong> "이 문제 모르겠어요."</p>
+        <p>
+          <strong>생성형 AI:</strong> 풀이 과정을 정리해 한 번에 보여준다. 대화는 여기서 끝난다.
+        </p>
+        <p>
+          <strong>에이전트:</strong> 학습 기록을 조회해 이 학생이 지난주 같은 유형에서 분모를
+          잘못 통분했음을 확인한다 <em>(도구·상태)</em>. 답 대신 "3분의 1과 4분의 1을 더하면
+          7분의 2가 맞을까요?"라고 되묻는다 <em>(목표에 따른 판단)</em>. 학생의 반응을 보고
+          힌트 수위를 조절한다 <em>(자율성)</em>.
+        </p>
+      </div>
+
+      <h3>에이전트다움 판별 체크리스트</h3>
+
+      <p>
+        어떤 시스템을 두고 에이전트인지 아닌지 다투는 것은 소모적입니다. 대신 정도를 재세요.
+        아래 다섯 문항 중 몇 개에 "예"라고 답할 수 있는지가 실질적인 척도입니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>문항</th><th class="num">예</th></tr></thead>
+          <tbody>
+            <tr><td>사용자가 매 단계를 지시하지 않아도 여러 단계를 진행하는가?</td><td class="num">□</td></tr>
+            <tr><td>모델 외부의 자원(파일, DB, API, 채점기)에 접근하는가?</td><td class="num">□</td></tr>
+            <tr><td>이전 상호작용의 결과가 다음 행동에 영향을 주는가?</td><td class="num">□</td></tr>
+            <tr><td>같은 입력에도 상황에 따라 다른 행동을 고를 수 있는가?</td><td class="num">□</td></tr>
+            <tr><td>언제 멈출지, 언제 사람에게 넘길지 판단하는가?</td><td class="num">□</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 10분</p>
+        <p>
+          평소 쓰는 AI 서비스 세 개를 골라 위 다섯 문항으로 채점해 보세요. 예를 들어
+          번역기, 학습 앱의 AI 기능, 코딩 도구. 점수가 낮은 것이 나쁜 도구라는 뜻은 아닙니다.
+          <strong>목적에 에이전트가 필요 없는 경우가 많다</strong>는 사실을 확인하는 것이 이 활동의
+          목적입니다.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내가 만들려는 것이 위 다섯 문항 중 몇 개에 해당하는지 지금 말할 수 있는가?
+        하나도 해당하지 않는다면, 굳이 에이전트를 만들 이유가 있는가?
+      </div>
+    </section>
+
+    <!-- ================= Q2 ================= -->
+    <section class="q" id="q2">
+      <div class="q__head">
+        <span class="q__n">질문 2</span>
+        <h2>생성형 AI와 AI 에이전트는 무엇이 다른가?</h2>
+      </div>
+
+      <p>
+        둘은 대립하는 개념이 아닙니다. 에이전트는 생성형 AI를 부품으로 씁니다. 차이는
+        <strong>어디까지를 시스템이 책임지는가</strong>에 있습니다. 그리고 이 차이는 연구자에게
+        아주 실질적인 결과를 낳습니다 — 평가 방법이 달라집니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead>
+            <tr><th></th><th>생성형 AI</th><th>AI 에이전트</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>입력</th><td>프롬프트 한 건</td><td>달성할 목표</td></tr>
+            <tr><th>단위</th><td>응답 1회</td><td>여러 턴에 걸친 과업</td></tr>
+            <tr><th>기억</th><td>대화창 안에서만</td><td>세션을 넘어 유지·갱신</td></tr>
+            <tr><th>외부 접근</th><td>없음(또는 제한적)</td><td>도구 호출이 기본</td></tr>
+            <tr><th>통제 주체</th><td>사용자가 매 턴 결정</td><td>시스템이 다음 행동을 결정</td></tr>
+            <tr><th>대표적 실패</th><td>틀린 내용을 그럴듯하게 말함</td><td>엉뚱한 목표를 향해 계속 나아감</td></tr>
+            <tr><th>평가 방법</th><td>응답의 정확성·품질</td><td>과업 성공률, 경로의 적절성, 회복력</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">함정 · 평가 설계가 바뀐다</p>
+        <p>
+          생성형 AI는 응답 하나를 놓고 "이 답이 맞나"를 물으면 됩니다. 에이전트는 그렇게 평가할
+          수 없습니다. 답 하나하나는 다 그럴듯한데 전체 대화가 학습으로 이어지지 않는 경우가
+          흔하기 때문입니다. 7주차 사용성 평가에서 <strong>과업 단위</strong>로 성공/실패를 정의하게
+          되는데, 그 씨앗을 지금 심어두어야 합니다.
+        </p>
+      </div>
+
+      <h3>자율성의 스펙트럼</h3>
+
+      <p>
+        여러분이 만들 것은 이 네 칸 중 어딘가에 놓입니다. 오른쪽으로 갈수록 좋은 것이 아니라,
+        <strong>오른쪽으로 갈수록 비싸고 통제하기 어렵습니다.</strong> 필요한 만큼만 가세요.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead>
+            <tr><th>단계</th><th>구성</th><th>교육 예시</th><th>8주 내 실현</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>0</th><td>프롬프트만</td>
+              <td>글쓰기 피드백을 주는 역할 지시문</td><td>매우 쉬움</td>
+            </tr>
+            <tr>
+              <th>1</th><td>프롬프트 + 지식</td>
+              <td>우리 학교 교육과정 문서를 근거로 답하는 학습 도우미</td><td>쉬움</td>
+            </tr>
+            <tr>
+              <th>2</th><td>+ 도구</td>
+              <td>학생 답안을 채점기에 넘기고 결과에 따라 피드백을 바꾸는 튜터</td><td>적정</td>
+            </tr>
+            <tr>
+              <th>3</th><td>+ 자율 루프</td>
+              <td>학습 상태를 보고 스스로 다음 활동을 계획·조정하는 코치</td><td>도전적</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 5분</p>
+        <p>
+          지금 머릿속에 있는 아이디어를 0–3 중 한 칸에 놓아 보세요. 그리고 한 칸 아래로
+          내렸을 때 <strong>교육적으로 무엇을 잃는지</strong> 한 문장으로 적으세요. 잃는 것이
+          별로 없다면, 내려가는 편이 낫습니다.
+        </p>
+      </div>
+
+      <div class="box box--more">
+        <p class="box__t">더 해보기 · 경험자용</p>
+        <p>
+          단계 3의 자율 루프는 대개 <code>계획 → 행동 → 관찰 → 반성</code>의 반복으로 구현됩니다.
+          루프가 멈추지 않는 문제(무한 반복, 목표 이탈)를 어떻게 막을지 지금부터 메모해 두면
+          5주차에 그대로 씁니다. 힌트: 최대 턴 수, 종료 조건, 사람 개입 지점.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        "내 시스템은 단계 __이고, 그 이유는 __ 때문이다"를 채울 수 있는가?
+      </div>
+    </section>
+
+    <!-- ================= Q3 ================= -->
+    <section class="q" id="q3">
+      <div class="q__head">
+        <span class="q__n">질문 3</span>
+        <h2>교육용 AI 에이전트는 무엇을 할 수 있는가?</h2>
+      </div>
+
+      <p>
+        교육 맥락에서 에이전트가 맡을 수 있는 역할은 생각보다 다양합니다. 대부분의 학생이
+        기본값처럼 "AI 튜터"를 떠올리는데, 그것은 여섯 갈래 중 하나일 뿐입니다. 다른 다섯 갈래를
+        먼저 보고 나서 고르세요.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead>
+            <tr><th>역할</th><th>하는 일</th><th>이론적 뿌리</th><th>실패하는 지점</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>튜터</th>
+              <td>설명하고, 질문하고, 오답의 원인을 짚는다</td>
+              <td>일대일 개인교수, 인지적 도제</td>
+              <td>학생이 답만 받아 가고 사고를 멈춤</td>
+            </tr>
+            <tr>
+              <th>코치</th>
+              <td>학습 전략과 계획을 다루고 스스로 점검하게 한다</td>
+              <td>자기조절학습, 메타인지</td>
+              <td>추상적 조언에 그쳐 행동이 안 바뀜</td>
+            </tr>
+            <tr>
+              <th>동료 학습자</th>
+              <td>같이 헤매고, 학습자에게 설명을 요구한다</td>
+              <td>설명 효과, 또래 교수</td>
+              <td>일부러 틀리는 연기가 어색해 신뢰를 잃음</td>
+            </tr>
+            <tr>
+              <th>평가자</th>
+              <td>산출물을 기준에 따라 판단하고 근거를 붙여 피드백한다</td>
+              <td>형성평가, 루브릭 기반 피드백</td>
+              <td>기준 없이 칭찬만 하거나 근거 없이 감점</td>
+            </tr>
+            <tr>
+              <th>학습 설계 보조</th>
+              <td>교사의 수업 설계·자료 제작·개별화를 돕는다</td>
+              <td>교수설계, 교사 전문성 지원</td>
+              <td>교사의 판단을 대체하려 들어 거부당함</td>
+            </tr>
+            <tr>
+              <th>시뮬레이션 상대</th>
+              <td>환자·고객·역사적 인물·토론 상대를 연기한다</td>
+              <td>상황학습, 역할극</td>
+              <td>재미는 있는데 학습목표와 연결이 안 됨</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">역할이 다르면 성공의 정의가 다르다</p>
+        <p>
+          <strong>튜터</strong>가 잘했다는 것은 학습자가 다음 문제를 스스로 풀었다는 뜻입니다.
+          <strong>코치</strong>가 잘했다는 것은 학습자가 다음 주에 계획을 세워 왔다는 뜻입니다.
+          <strong>동료 학습자</strong>가 잘했다는 것은 학습자가 더 많이, 더 정교하게 설명했다는
+          뜻입니다. 역할을 고르는 순간 7주차 평가 지표의 절반이 정해집니다.
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 10분</p>
+        <p>
+          여섯 역할 중 내 문제에 맞는 것 <strong>둘</strong>을 고르고, 각각에 대해
+          "이 역할이 성공했다면 학습자에게서 무엇이 관찰될까"를 한 문장씩 쓰세요.
+          둘 중 관찰 가능한 문장이 더 또렷하게 나오는 쪽이 대체로 더 나은 선택입니다.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내가 고른 역할의 성공을 눈에 보이는 학습자 행동으로 말할 수 있는가?
+      </div>
+    </section>
+
+    <!-- ================= Q4 ================= -->
+    <section class="q" id="q4">
+      <div class="q__head">
+        <span class="q__n">질문 4</span>
+        <h2>좋은 교육용 AI 에이전트는 무엇이 다른가?</h2>
+      </div>
+
+      <p>
+        잘 만든 교육용 에이전트와 그럴듯해 보이는 데모의 차이는 기술이 아닙니다. 대부분
+        <strong>교육적 판단</strong>에서 갈립니다. 흔한 실패 유형 넷을 먼저 알아두면 자기 설계를
+        스스로 검열할 수 있습니다.
+      </p>
+
+      <h3>흔한 네 가지 실패</h3>
+
+      <div class="box box--warn">
+        <p class="box__t">함정 1 · 정답 자판기</p>
+        <p>
+          물으면 바로 답을 준다. 학습자는 만족하지만 아무것도 배우지 않는다. 사용 로그는
+          화려하고 만족도 점수도 높게 나오기 때문에 특히 위험합니다.
+        </p>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">함정 2 · 만능 챗봇</p>
+        <p>
+          무엇이든 물어보라고 한다. 범위가 없으니 품질도 없고, 학습목표와의 연결도 없다.
+          평가하려 해도 무엇을 평가할지 정할 수 없습니다.
+        </p>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">함정 3 · 데모용 화려함</p>
+        <p>
+          발표에서는 잘 돌아가는데 실제 수업 한 차시를 버티지 못한다. 교사가 개입할 방법이
+          없고, 예외 상황에서 무너진다.
+        </p>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">함정 4 · 교사 대체 서사</p>
+        <p>
+          "교사 없이도 학습이 가능하다"를 전제로 설계한다. 현장에서 거부당하고, 연구로서도
+          검증하기 어려운 주장을 떠안게 됩니다.
+        </p>
+      </div>
+
+      <h3>좋은 에이전트의 다섯 가지 특징</h3>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>특징</th><th>설계에서 드러나는 모습</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>목표 정렬</th>
+              <td>모든 행동이 특정 학습목표에 연결된다. 목표와 무관한 요청은 정중히 돌려보낸다.</td>
+            </tr>
+            <tr>
+              <th>생산적 어려움 유지</th>
+              <td>바로 답하지 않는 규칙이 명시돼 있다. 학습자가 시도한 뒤에만 도움이 나간다.</td>
+            </tr>
+            <tr>
+              <th>스캐폴딩과 철수</th>
+              <td>도움의 수위가 단계로 정의돼 있고, 학습자가 해내면 지원을 줄인다.</td>
+            </tr>
+            <tr>
+              <th>근거 있는 피드백</th>
+              <td>"좋아요" 대신 기준의 어느 항목이 왜 충족됐는지를 말한다.</td>
+            </tr>
+            <tr>
+              <th>교사의 통제 가능성</th>
+              <td>교사가 범위·난이도·개입 시점을 설정하거나 대화를 넘겨받을 수 있다.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 15분 · 조별</p>
+        <p>
+          실제 서비스나 논문 속 사례에서 교육용 AI 에이전트 <strong>두 개</strong>를 찾으세요.
+          하나는 위 다섯 특징을 잘 갖춘 것, 하나는 네 함정 중 하나에 빠진 것.
+          각각 <strong>근거가 되는 화면이나 인용</strong>을 함께 가져와 조원에게 설명하세요.
+          "느낌"이 아니라 관찰 가능한 증거로 말하는 연습입니다.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내 아이디어는 지금 네 함정 중 어디에 가장 가까운가? 솔직하게.
+      </div>
+    </section>
+
+    <!-- ================= Q5 ================= -->
+    <section class="q" id="q5">
+      <div class="q__head">
+        <span class="q__n">질문 5</span>
+        <h2>내가 해결하고 싶은 교육문제는 무엇인가?</h2>
+      </div>
+
+      <p>
+        여기가 이번 학기의 진짜 출발점입니다. 그리고 대부분의 학생이 여기서 같은 실수를 합니다.
+        <strong>해결책을 문제라고 부르는 것</strong>입니다.
+      </p>
+
+      <div class="box box--warn">
+        <p class="box__t">이것은 문제 진술이 아니다</p>
+        <p>
+          "AI 튜터를 만들고 싶다" · "챗봇으로 글쓰기를 돕고 싶다" · "생성형 AI를 수업에 적용하고
+          싶다"<br>
+          — 모두 <strong>만들고 싶은 것</strong>이지 <strong>안 되고 있는 것</strong>이 아닙니다.
+          해결책에서 출발하면 요구 분석은 이미 정해진 답을 정당화하는 요식행위가 됩니다.
+        </p>
+      </div>
+
+      <h3>문제 진술의 세 요소</h3>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>요소</th><th>물어야 할 것</th></tr></thead>
+          <tbody>
+            <tr><th>누가</th><td>어떤 학습자인가? 학년, 선행 수준, 맥락까지 좁혀서.</td></tr>
+            <tr><th>무엇을 할 때</th><td>어떤 과제, 어떤 활동, 어떤 순간인가?</td></tr>
+            <tr><th>무엇이 안 되는가</th><td>관찰 가능한 형태로. 무엇을 못 하거나, 무엇을 잘못하거나, 무엇을 하지 않는가?</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl__bar">
+          <span class="tpl__name">문제 진술 문장 틀</span>
+          <button class="copy" type="button">복사</button>
+        </div>
+<pre><code>[누가]는 [어떤 과제/활동]을 할 때
+[무엇이 안 되는지 — 관찰 가능한 형태]한다.
+
+이것이 문제인 이유는 [학습에 미치는 영향]이기 때문이다.
+현재는 [기존의 대처 방식]으로 다루고 있으나
+[그 방식의 한계]하다.</code></pre>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">고쳐 쓰기 예시</p>
+        <p>
+          <strong>처음:</strong> "학생들의 글쓰기 실력이 부족해서 AI 첨삭 도구를 만들고 싶다."
+        </p>
+        <p>
+          <strong>고친 뒤:</strong> "중학교 2학년 학생은 주장하는 글을 쓸 때, 주장을 뒷받침할
+          근거를 한 문장 이상 쓰지 못하거나 근거 대신 같은 주장을 반복해서 쓴다. 이것이 문제인
+          이유는 근거 생성이 논증 능력의 핵심이기 때문이다. 현재는 교사가 개별 첨삭으로
+          다루고 있으나, 30명 학급에서 한 명당 한 학기에 두세 번밖에 돌아가지 않는다."
+        </p>
+        <p>
+          고친 뒤의 진술은 <strong>측정할 수 있고</strong>, <strong>남이 반박할 수 있고</strong>,
+          <strong>해결책을 아직 정하지 않았습니다.</strong> 세 가지가 다 충족돼야 좋은 문제 진술입니다.
+        </p>
+      </div>
+
+      <h3>8주 안에 다룰 수 있는 크기인가</h3>
+
+      <p>
+        범위가 큰 문제는 좋은 문제가 아니라 못 끝내는 문제입니다. 아래 기준으로 좁히세요.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>기준</th><th>너무 큼</th><th>적정</th></tr></thead>
+          <tbody>
+            <tr><th>학습자 범위</th><td>중고등학생 전체</td><td>중2, 특정 단원 학습 중</td></tr>
+            <tr><th>과제 범위</th><td>글쓰기 전반</td><td>주장하는 글의 근거 생성</td></tr>
+            <tr><th>기간</th><td>한 학기 학습 성과 향상</td><td>한 차시 활동 중의 수행</td></tr>
+            <tr><th>대상자 접근</th><td>학교 협조가 필요한 대규모 적용</td><td>6–10명 대상 사용성 평가</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 20분</p>
+        <p>
+          위 문장 틀로 <strong>서로 다른 문제 진술 세 개</strong>를 쓰세요. 하나만 쓰면 첫 아이디어에
+          갇힙니다. 그다음 세 개를 놓고 이렇게 물으세요.
+        </p>
+        <ul>
+          <li>이 문제가 실재한다는 것을 증명할 사람을 이번 주에 만날 수 있는가?</li>
+          <li>해결됐는지 여부를 무엇으로 확인할 수 있는가?</li>
+          <li>AI 에이전트가 아닌 방법으로 이미 잘 해결되고 있지는 않은가?</li>
+        </ul>
+        <p>세 질문에 가장 잘 답할 수 있는 것을 고르세요.</p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내 문제 진술 안에 "AI"라는 단어가 들어 있는가? 들어 있다면 빼고 다시 써 보라.
+        빼도 말이 되면 좋은 진술이고, 말이 안 되면 해결책에서 출발한 것이다.
+      </div>
+    </section>
+
+    <!-- ================= Q6 ================= -->
+    <section class="q" id="q6">
+      <div class="q__head">
+        <span class="q__n">질문 6</span>
+        <h2>학습자는 어디에서 어려움을 겪는가?</h2>
+      </div>
+
+      <p>
+        문제 진술은 아직 <strong>가설</strong>입니다. 여러분의 경험과 직관에서 나온 것이지요.
+        연구가 되려면 증거가 필요합니다. 요구 분석은 "학습자가 어려워할 것 같다"를
+        "학습자가 이러이러하게 어려워한다"로 바꾸는 작업입니다.
+      </p>
+
+      <h3>어려움의 다섯 가지 층위</h3>
+
+      <p>
+        같은 "못 한다"도 원인이 다르면 처방이 완전히 달라집니다. 인터뷰할 때 이 층위를 염두에
+        두고 들으면 훨씬 잘 들립니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>층위</th><th>증상</th><th>이 경우 에이전트가 할 일</th></tr></thead>
+          <tbody>
+            <tr><th>선행지식</th><td>필요한 개념·어휘를 모른다</td><td>진단하고 보충한다</td></tr>
+            <tr><th>전략</th><td>알지만 어떻게 접근할지 모른다</td><td>절차를 모델링하고 안내한다</td></tr>
+            <tr><th>동기·정서</th><td>할 수 있는데 시작하지 않거나 금방 포기한다</td><td>과제를 쪼개고 진전을 보여준다</td></tr>
+            <tr><th>피드백 부재</th><td>했는데 잘했는지 모른다</td><td>기준에 따라 즉시 되돌려준다</td></tr>
+            <tr><th>환경·기회</th><td>연습할 기회 자체가 없다</td><td>연습 상대·상황을 제공한다</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>자료를 어디서 얻을 것인가</h3>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>방법</th><th>규모</th><th>얻는 것</th><th>주의</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>인터뷰</th><td>학습자 4–6명 + 교사 2–3명</td>
+              <td>왜 어려운지, 실제로 어떻게 하는지</td>
+              <td>가장 정보량이 많다. 시간이 없으면 이것부터.</td>
+            </tr>
+            <tr>
+              <th>설문</th><td>20명 이상</td>
+              <td>어려움의 분포와 빈도</td>
+              <td>인원이 안 되면 무리하지 말 것</td>
+            </tr>
+            <tr>
+              <th>산출물·로그 분석</th><td>10–30건</td>
+              <td>실제로 무엇을 잘못 쓰는지</td>
+              <td>말과 실제가 다를 때 결정적 근거</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">셋 중 하나만 한다면</p>
+        <p>
+          <strong>인터뷰 5–6명</strong>을 권합니다. 8주 과정에서 설문 표본을 제대로 모으기는
+          어렵고, 요구 분석 단계에서 필요한 것은 분포보다 <em>기제</em>이기 때문입니다.
+          다만 인터뷰만으로는 "학습자가 말한 어려움"에 갇히므로, 학습자가 실제로 만든
+          산출물 몇 건을 같이 보면 훨씬 단단해집니다.
+        </p>
+      </div>
+
+      <h3>인터뷰 설계의 원칙</h3>
+
+      <p>
+        인터뷰가 실패하는 이유는 대개 질문이 잘못돼서입니다. 아래 순서를 지키면 실패 확률이
+        크게 줄어듭니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>단계</th><th>목적</th><th>질문 예</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>1 · 경험 열기</th><td>맥락 파악, 긴장 해소</td>
+              <td>"최근에 ○○ 과제를 했던 때를 떠올려 주세요. 어떤 과제였나요?"</td>
+            </tr>
+            <tr>
+              <th>2 · 구체 사례</th><td>추상적 진술 방지</td>
+              <td>"그때 처음부터 끝까지 어떤 순서로 하셨는지 말해 주세요."</td>
+            </tr>
+            <tr>
+              <th>3 · 어려움 지점</th><td>문제의 위치 확인</td>
+              <td>"그중에 가장 오래 걸렸거나 막혔던 부분은 어디였나요?"</td>
+            </tr>
+            <tr>
+              <th>4 · 대처 방식</th><td>기존 해법과 그 한계</td>
+              <td>"막혔을 때 어떻게 하셨어요? 그게 도움이 됐나요?"</td>
+            </tr>
+            <tr>
+              <th>5 · 바람</th><td>요구의 단서</td>
+              <td>"그 순간 누가 옆에 있었다면 무엇을 해줬으면 했나요?"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">하지 말아야 할 질문</p>
+        <ul>
+          <li><strong>유도 질문</strong> — "AI가 도와주면 좋겠죠?" → 모두가 그렇다고 답합니다.</li>
+          <li><strong>미래 가정 질문</strong> — "이런 도구가 있다면 쓰시겠어요?" → 예측은 빗나갑니다. 과거 행동을 물으세요.</li>
+          <li><strong>해결책 묻기</strong> — "어떤 기능이 필요하세요?" → 요구 분석은 사용자에게 설계를 시키는 일이 아닙니다.</li>
+          <li><strong>두 개를 한 번에</strong> — "어렵고 지루하지 않았나요?" → 무엇에 답한 건지 알 수 없습니다.</li>
+        </ul>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">연구윤리 최소선</p>
+        <p>
+          미성년자가 대상이면 보호자 동의가 필요합니다. 모든 참여자에게 <strong>목적·소요 시간·
+          녹음 여부·거부할 권리</strong>를 미리 알리고 동의를 받으세요. 이름은 즉시 익명 코드로
+          바꾸고(P1, T2 …), 녹음 파일과 전사본은 개인 계정 외부에 올리지 않습니다. 이 내용은
+          요구분석 보고서에 한 문단으로 반드시 기록합니다.
+        </p>
+      </div>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 25분</p>
+        <p>
+          위 5단계 구조로 <strong>인터뷰 프로토콜 8문항</strong>을 작성하고, 옆 사람에게
+          그대로 실시해 보세요. 10분이면 됩니다. 실제로 해보면 대개 두세 문항이
+          작동하지 않는다는 것을 즉시 알게 됩니다. 그 자리에서 고치세요.
+        </p>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내 프로토콜에 "예/아니오"로 끝나는 질문이 몇 개인가? 절반이 넘으면 다시 쓴다.
+      </div>
+    </section>
+
+    <!-- ================= Q7 ================= -->
+    <section class="q" id="q7">
+      <div class="q__head">
+        <span class="q__n">질문 7</span>
+        <h2>어떤 AI 에이전트가 필요한가?</h2>
+      </div>
+
+      <p>
+        마지막 질문입니다. 그런데 여기서 설계를 시작하면 안 됩니다. 지금 할 일은
+        <strong>수집한 자료에서 요구를 뽑아내는 것</strong>까지입니다. 요구는 아직 기능이 아니고,
+        기능은 4주차에 명세서를 쓰면서 정합니다.
+      </p>
+
+      <div class="define">
+        <b>요구</b>는 "학습자에게 무엇이 필요한가"이고,<br>
+        <b>기능</b>은 "시스템이 무엇을 하는가"다. 이 둘을 섞으면 근거 없는 기능이 들어온다.
+      </div>
+
+      <div class="tpl">
+        <div class="tpl__bar">
+          <span class="tpl__name">요구 진술 문장 틀</span>
+          <button class="copy" type="button">복사</button>
+        </div>
+<pre><code>[학습자]는 [어떤 상황]에서 [무엇]이 필요하다.
+  근거: [인터뷰 P3, P5 / 산출물 분석 / 문헌]
+  층위: 선행지식 | 전략 | 동기·정서 | 피드백 | 환경
+  빈도: 상 | 중 | 하
+  심각도: 상 | 중 | 하</code></pre>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">작성 예</p>
+        <p>
+          "중2 학습자는 주장하는 글의 개요를 짜는 동안, 자신이 든 근거가 주장을 실제로
+          뒷받침하는지 판단할 기준이 필요하다.<br>
+          근거: 인터뷰 P1·P3·P4, 학생 글 12편 중 9편에서 주장 반복 확인<br>
+          층위: 전략 + 피드백 · 빈도: 상 · 심각도: 상"
+        </p>
+      </div>
+
+      <h3>우선순위 정하기</h3>
+
+      <p>
+        요구를 다섯에서 여덟 개쯤 뽑으면, 전부 다룰 수 없다는 것이 분명해집니다. 세 축으로
+        추리세요.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>축</th><th>묻는 것</th></tr></thead>
+          <tbody>
+            <tr><th>빈도</th><td>얼마나 자주 일어나는가?</td></tr>
+            <tr><th>심각도</th><td>일어났을 때 학습에 얼마나 나쁜가?</td></tr>
+            <tr><th>실현 가능성</th><td>8주 안에 다룰 수 있는가?</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        빈도와 심각도가 모두 높은데 실현 가능성이 낮다면, 그 요구를 <strong>더 작게 쪼개는</strong>
+        것이 정답입니다. 버리지 마세요.
+      </p>
+
+      <div class="box box--do">
+        <p class="box__t">지금 해볼 것 · 15분</p>
+        <p>
+          자료에서 요구 <strong>다섯 개</strong>를 위 문장 틀로 뽑고, 세 축으로 점수를 매겨
+          상위 두 개를 고르세요. 이 두 개가 여러분 에이전트의 뼈대가 됩니다.
+        </p>
+      </div>
+
+      <div class="box box--more">
+        <p class="box__t">다음 주로 넘길 질문</p>
+        <ul>
+          <li>이 요구를 다룬 선행 연구는 무엇을 했고, 무엇을 못 했는가? → 2주차</li>
+          <li>이 요구에 맞는 교수학습 이론은 무엇인가? → 2주차</li>
+          <li>요구를 설계원리로 어떻게 바꾸는가? → 3주차</li>
+        </ul>
+      </div>
+
+      <div class="check">
+        <b>자기점검</b>
+        내가 뽑은 요구 각각에 근거로 붙일 수 있는 자료가 실제로 있는가?
+        "그럴 것 같아서"가 근거인 항목은 지워야 한다.
+      </div>
+    </section>
+
+    <!-- ================= 워크숍 ================= -->
+    <section class="q" id="workshop">
+      <div class="q__head">
+        <span class="q__n">워크숍</span>
+        <h2>요구분석 보고서 쓰기</h2>
+      </div>
+
+      <p>
+        아래 목차대로 쓰면 됩니다. 분량은 5–8쪽. 이 보고서는 최종 연구보고서의 1장이 되므로,
+        지금 제대로 써두면 8주차에 그대로 씁니다.
+      </p>
+
+      <div class="tpl">
+        <div class="tpl__bar">
+          <span class="tpl__name">requirements-analysis.md</span>
+          <button class="copy" type="button">복사</button>
+        </div>
+<pre><code># 요구분석 보고서
+
+## 1. 문제 배경
+- 이 문제에 관심을 갖게 된 맥락
+- 교육적 중요성 (왜 다룰 가치가 있는가)
+
+## 2. 문제 진술
+- [누가]는 [무엇을 할 때] [무엇이 안 되는지]
+- 이것이 문제인 이유
+- 현재의 대처 방식과 그 한계
+
+## 3. 대상 학습자 분석
+- 학년/연령, 선행 수준, 학습 맥락
+- 이 학습자의 특성 중 설계에 영향을 줄 것
+
+## 4. 요구 분석 방법
+- 자료 수집 방법과 이유
+- 참여자 (인원, 선정 기준, 익명 코드)
+- 기간, 도구(인터뷰 프로토콜 / 설문지는 부록)
+- 연구윤리 조치
+
+## 5. 요구 분석 결과
+- 주요 발견 3~5가지
+- 각 발견마다 근거 인용 (P1, P3 …)
+- 예상과 달랐던 점
+
+## 6. 도출된 요구 목록
+| 번호 | 요구 진술 | 근거 | 층위 | 빈도 | 심각도 | 우선순위 |
+|-----|---------|-----|-----|-----|-------|--------|
+| R1  |         |     |     |     |       |        |
+
+## 7. 초기 에이전트 구상
+- 맡길 역할 (튜터/코치/동료/평가자/설계보조/시뮬레이션)
+- 자율성 단계 (0~3)와 그 이유
+- 아직 정하지 않은 것 = 2~3주차에 풀 질문
+
+## 부록
+- A. 인터뷰 프로토콜
+- B. 동의서 양식
+- C. 전사본 발췌</code></pre>
+      </div>
+
+      <div class="tpl">
+        <div class="tpl__bar">
+          <span class="tpl__name">인터뷰 프로토콜 골격</span>
+          <button class="copy" type="button">복사</button>
+        </div>
+<pre><code>[도입 · 2분]
+- 연구 목적, 소요 시간, 녹음 여부, 중단할 권리 안내
+- 동의 확인
+
+[1. 경험 열기 · 3분]
+Q1. 최근에 ______ 과제를 했던 때를 떠올려 주세요. 어떤 과제였나요?
+Q2. 그 과제는 얼마나 자주 하시나요?
+
+[2. 구체 사례 · 5분]
+Q3. 그때 처음부터 끝까지 어떤 순서로 하셨는지 말씀해 주세요.
+Q4. 그 과정에서 가장 시간이 오래 걸린 부분은 어디였나요?
+
+[3. 어려움 지점 · 5분]
+Q5. 막혔던 순간이 있었다면 그때 무슨 일이 있었나요?
+Q6. 그 어려움은 매번 생기나요, 아니면 특정한 경우에만 생기나요?
+
+[4. 대처 방식 · 3분]
+Q7. 막혔을 때 어떻게 하셨어요? 그 방법이 도움이 됐나요?
+
+[5. 바람 · 2분]
+Q8. 그 순간 누가 옆에 있었다면 무엇을 해줬으면 하셨나요?
+
+[마무리]
+- 덧붙이고 싶은 말이 있는지
+- 감사 인사, 후속 연락 가능 여부</code></pre>
+      </div>
+
+      <div class="box box--more">
+        <p class="box__t">더 해보기 · AI 도구 활용</p>
+        <p>
+          전사본이 쌓이면 Claude나 Codex에 넣고 "어려움의 층위별로 분류하고 각 분류에
+          해당하는 인용을 붙여줘"라고 요청해 1차 코딩을 돌릴 수 있습니다. 다만
+          <strong>AI가 뽑은 범주를 그대로 쓰지 마세요.</strong> 반드시 원문으로 돌아가 확인하고,
+          보고서에는 AI를 어떻게 썼는지 방법 절에 적어야 합니다. 이것도 연구 절차의 일부입니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= 제출 ================= -->
+    <section class="q" id="submit">
+      <div class="q__head">
+        <span class="q__n">제출</span>
+        <h2>산출물과 평가 기준</h2>
+      </div>
+
+      <p>
+        <strong>요구분석 보고서</strong> 1편(5–8쪽, PDF)을 2주차 수업 전까지 제출합니다.
+        인터뷰 프로토콜과 동의서를 부록으로 포함하세요.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead>
+            <tr><th>항목</th><th>미흡</th><th>보통</th><th>우수</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>문제 진술</th>
+              <td>해결책이 문제 자리에 있음</td>
+              <td>문제는 명확하나 범위가 넓음</td>
+              <td>누가·언제·무엇이 안 되는지가 측정 가능한 형태</td>
+            </tr>
+            <tr>
+              <th>자료 수집</th>
+              <td>수집 없이 추측으로 서술</td>
+              <td>수집했으나 방법 기술이 부실</td>
+              <td>방법·참여자·도구·윤리가 재현 가능하게 기술됨</td>
+            </tr>
+            <tr>
+              <th>요구 도출</th>
+              <td>요구와 기능이 뒤섞임</td>
+              <td>요구 진술은 있으나 근거 연결이 약함</td>
+              <td>요구마다 자료 근거가 추적 가능하게 붙음</td>
+            </tr>
+            <tr>
+              <th>우선순위</th>
+              <td>없음</td>
+              <td>순위는 있으나 기준이 불명확</td>
+              <td>세 축으로 판단하고 8주 범위를 스스로 조정함</td>
+            </tr>
+            <tr>
+              <th>연구윤리</th>
+              <td>언급 없음</td>
+              <td>동의만 언급</td>
+              <td>동의·익명화·자료 관리가 구체적으로 기술됨</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ================= 다음 주 ================= -->
+    <section class="wrap-up" id="next">
+      <h2>다음 주까지</h2>
+
+      <p>
+        2주차에는 여러분이 찾은 문제를 <strong>이미 누가, 어떻게 다뤘는지</strong> 확인합니다.
+        요구 분석이 "현장에서 무엇이 안 되는가"였다면, 문헌 분석은 "학계는 무엇을 알아냈는가"입니다.
+        이 둘이 만나야 3주차에 설계원리가 나옵니다.
+      </p>
+
+      <h4>미리 해올 것</h4>
+      <ul>
+        <li>요구분석 보고서 초안 (제출)</li>
+        <li>내 문제와 관련 있어 보이는 논문 <strong>3편</strong>을 찾아 제목·초록만 읽고 오기</li>
+        <li>비슷한 목적의 기존 AI 도구·서비스 <strong>2개</strong>를 직접 써보고 화면 캡처</li>
+      </ul>
+
+      <h4>읽을거리</h4>
+      <ul class="refs">
+        <li>
+          요구 분석과 설계·개발연구의 관계 — 문제 정의가 왜 연구의 절반인지
+          <span class="src">Richey &amp; Klein, Design and Development Research, 1장</span>
+        </li>
+        <li>
+          사용자 인터뷰에서 사람들의 말과 행동이 어긋나는 이유와 질문 설계
+          <span class="src">Portigal, Interviewing Users, 3–4장</span>
+        </li>
+        <li>
+          지능형 튜터링 시스템이 어디까지 왔고 무엇이 여전히 어려운가 — 개관 논문 1편을
+          직접 검색해 읽고, 2주차에 그 논문을 가져오세요
+          <span class="src">검색어 예: intelligent tutoring system, review, learning gains</span>
+        </li>
+      </ul>
+
+      <a class="nextlink" href="index.html">
+        <span>
+          <span class="k">다음</span>
+          <span class="v">2주 · 문헌 분석</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </section>
+
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="foot__in">
+    <span>교육용 AI 에이전트 개발 · 2026학년도 2학기</span>
+    <span><a href="index.html">전체 주차 보기</a></span>
+  </div>
+</footer>
+
+<script src="assets/notes.js"></script>
+</body>
+</html>
