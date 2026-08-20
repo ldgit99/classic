@@ -157,7 +157,7 @@ a:hover { color: var(--accent); }
 .brand__sub {
   font-family: var(--mono);
   font-size: .68rem;
-  letter-spacing: .1em;
+  letter-spacing: .05em;
   color: var(--ink-3);
   display: block;
   font-weight: 400;
@@ -222,7 +222,7 @@ a:hover { color: var(--accent); }
 .rail__label {
   font-family: var(--mono);
   font-size: .66rem;
-  letter-spacing: .14em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--ink-3);
   margin: 0 0 .85rem;
@@ -308,7 +308,7 @@ a:hover { color: var(--accent); }
 .eyebrow {
   font-family: var(--mono);
   font-size: .72rem;
-  letter-spacing: .16em;
+  letter-spacing: .09em;
   text-transform: uppercase;
   color: var(--accent);
   margin: 0 0 .9rem;
@@ -354,7 +354,7 @@ a:hover { color: var(--accent); }
 .meta dt {
   font-family: var(--mono);
   font-size: .64rem;
-  letter-spacing: .12em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--ink-3);
   margin: 0 0 .3rem;
@@ -379,7 +379,7 @@ a:hover { color: var(--accent); }
 .goals h2 {
   font-family: var(--mono);
   font-size: .68rem;
-  letter-spacing: .14em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--ink-3);
   margin: 0 0 .85rem;
@@ -403,7 +403,7 @@ a:hover { color: var(--accent); }
   font-family: var(--mono);
   font-size: .72rem;
   font-weight: 500;
-  letter-spacing: .12em;
+  letter-spacing: .07em;
   color: var(--accent);
   display: block;
   margin-bottom: .55rem;
@@ -432,7 +432,7 @@ a:hover { color: var(--accent); }
   font-family: var(--mono);
   font-size: .72rem;
   font-weight: 500;
-  letter-spacing: .1em;
+  letter-spacing: .05em;
   text-transform: uppercase;
   color: var(--ink-3);
   margin: 1.75rem 0 .6rem;
@@ -490,7 +490,7 @@ code {
 .box__t {
   font-family: var(--mono);
   font-size: .68rem;
-  letter-spacing: .13em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   font-weight: 500;
   margin: 0 0 .8rem;
@@ -548,7 +548,7 @@ th, td {
 thead th {
   font-family: var(--mono);
   font-size: .68rem;
-  letter-spacing: .1em;
+  letter-spacing: .04em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--ink-3);
@@ -630,7 +630,7 @@ td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
 .check b {
   font-family: var(--mono);
   font-size: .66rem;
-  letter-spacing: .13em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--accent);
   display: block;
@@ -687,7 +687,7 @@ td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
 .nextlink .k {
   font-family: var(--mono);
   font-size: .66rem;
-  letter-spacing: .13em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--ink-3);
   display: block;
@@ -775,7 +775,7 @@ td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
 .hero__facts dt {
   font-family: var(--mono);
   font-size: .66rem;
-  letter-spacing: .12em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--ink-3);
   margin: 0;
@@ -786,7 +786,7 @@ td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
 .sec > h2 {
   font-family: var(--mono);
   font-size: .7rem;
-  letter-spacing: .15em;
+  letter-spacing: .07em;
   text-transform: uppercase;
   color: var(--ink-3);
   font-weight: 500;
@@ -843,7 +843,7 @@ td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
 .wk__out span {
   font-family: var(--mono);
   font-size: .6rem;
-  letter-spacing: .12em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--ink-3);
   display: block;
@@ -855,7 +855,7 @@ td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
   font-style: normal;
   font-family: var(--mono);
   font-size: .58rem;
-  letter-spacing: .1em;
+  letter-spacing: .04em;
   text-transform: uppercase;
   padding: .18rem .42rem;
   border-radius: 2px;
@@ -890,9 +890,30 @@ td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
 .card__k {
   font-family: var(--mono);
   font-size: .64rem;
-  letter-spacing: .13em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--accent);
   display: block;
   margin-bottom: .55rem;
+}
+
+/* --- 배포 파일 목록 ------------------------------------------------------ */
+.files { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 1.75rem 0; }
+.files a {
+  background: var(--surface);
+  display: flex;
+  align-items: baseline;
+  gap: .9rem;
+  padding: .85rem 1.1rem;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: .92rem;
+  transition: background .12s;
+}
+.files a:hover { background: var(--accent-soft); color: var(--ink); }
+.files .fn { font-family: var(--mono); font-size: .78rem; color: var(--accent-ink); flex: none; }
+.files .fd { color: var(--ink-2); font-size: .86rem; margin-left: auto; text-align: right; }
+@media (max-width: 34rem) {
+  .files a { flex-wrap: wrap; gap: .25rem .9rem; }
+  .files .fd { margin-left: 0; text-align: left; width: 100%; }
 }
