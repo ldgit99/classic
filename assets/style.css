@@ -524,6 +524,42 @@ code {
 }
 .box--more .box__t { color: var(--ink-3); }
 
+/* 활동 결과를 어디에 적는가 */
+.goto {
+  margin: 1.1rem 0 0;
+  padding-top: .75rem;
+  border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  font-size: .87rem;
+  line-height: 1.55;
+  color: var(--do-ink);
+  font-weight: 500;
+}
+.goto::before {
+  content: "92";
+  margin-right: .45rem;
+  opacity: .65;
+  font-weight: 400;
+}
+.goto code {
+  font-family: var(--mono);
+  font-size: .82rem;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+.goto em { font-style: normal; opacity: .72; }
+.box--more .goto { color: var(--ink-2); }
+
+.box .tiny {
+  margin: -.35rem 0 .9rem;
+  font-size: .82rem;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+
+.muted { color: var(--ink-3); font-size: .88em; }
+
 /* --- 표 ----------------------------------------------------------------- */
 .tw {
   margin: 1.75rem 0;
