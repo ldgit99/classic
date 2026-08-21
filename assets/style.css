@@ -585,11 +585,15 @@ code {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
+  /* 내용에 맞춰 줄어들되 산문 폭보다는 넓게, --wide 를 넘지 않게 */
+  width: fit-content;
+  min-width: min(var(--measure), 100%);
+  max-width: 100%;
 }
 table {
   border-collapse: collapse;
   width: 100%;
-  min-width: 34rem;
+  min-width: min(34rem, 100%);
   font-size: .89rem;
   line-height: 1.6;
 }
