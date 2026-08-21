@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link rel="stylesheet" href="assets/style.css?v=5">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
 </head>
 <body>
@@ -139,6 +139,8 @@
         <p>
           파란 상자는 지금 손으로 해볼 것, 붉은 상자는 흔히 빠지는 함정,
           점선 상자는 경험이 있는 사람을 위한 추가 과제입니다.
+          파란 상자 맨 아래 <b>→</b> 줄은 그 결과를
+          <b>어느 문서 어느 절에 적으라는 뜻</b>입니다.
         </p>
       </div>
       <div class="card">
@@ -159,6 +161,69 @@
         </p>
       </div>
     </div>
+  </section>
+
+  <section class="sec" id="spec">
+    <h2>명세서는 이렇게 자랍니다</h2>
+    <p class="sec__lede">
+      <code>agent-design.md</code>는 4주차 산출물이지만, 파일은 <b>1주차에 받아 둡니다.</b>
+      매주 활동 결과를 정해진 절에 적어 나가면 4주차에는 남은 빈칸만 채우면 됩니다.
+      새로 쓰는 문서가 아니라 여덟 주 동안 자라는 문서입니다.
+    </p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>주차</th><th>활동에서 나오는 것</th><th><code>agent-design.md</code> 어디로</th></tr></thead>
+        <tbody>
+          <tr>
+            <th>1주</th>
+            <td>문제 진술 · 대상 학습자 · 역할 · 자율성 단계</td>
+            <td><b>0</b> 요약 · <b>1</b> 정체성</td>
+          </tr>
+          <tr>
+            <th>2주</th>
+            <td>주 이론 · "만약 ~하면 ~한다" 규칙 · 사례의 범위 밖 대응</td>
+            <td><b>0</b> 요약 · <b>4.2</b> 초안 · <b>1</b> 경계 초안</td>
+          </tr>
+          <tr>
+            <th>3주</th>
+            <td>설계원리 P · 설계지침 G · 근거 추적표</td>
+            <td><b>0</b> 요약 · <b>2</b> 기능 근거 · <b>4.2</b></td>
+          </tr>
+          <tr>
+            <th>4주</th>
+            <td>남은 전부와 정합성 검토 — <b>여기서 v1.0 완성</b></td>
+            <td><b>1</b>–<b>9</b> 전 절</td>
+          </tr>
+          <tr>
+            <th>5주</th>
+            <td>기술 스택 확정 · 명세 위반 목록</td>
+            <td><b>7</b> 기술 스택 · <b>9</b> 변경 이력</td>
+          </tr>
+          <tr>
+            <th>6주</th>
+            <td>전문가 지적의 반영 결과 — <b>v2.0</b></td>
+            <td><b>9</b> + 고친 절</td>
+          </tr>
+          <tr>
+            <th>7주</th>
+            <td>사용성 평가 후 수정 — <b>최종판</b></td>
+            <td><b>9</b> · <b>6.3</b> 성공 기준</td>
+          </tr>
+          <tr>
+            <th>8주</th>
+            <td>조립하지 않음 — 그대로 보고서 부록 D</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="sec__note">
+      이 순서 덕분에 <b>2주차 사례분석에서 "같은 질문을 세 번 반복하면?"을 확인하는 활동</b>이
+      그냥 조사가 아니라 내 명세서 1절의 재료가 됩니다. 활동의 쓸모가 그 자리에서 보이도록
+      각 주차 파란 상자 아래에 → 표시를 달아 두었습니다.
+    </p>
   </section>
 
   <section class="sec" id="templates">

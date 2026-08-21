@@ -837,6 +837,23 @@ td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
   text-wrap: balance;
 }
 
+.sec > .sec__note {
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 1.35rem;
+  border-left: 2px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: .95rem;
+  line-height: 1.75;
+  color: var(--ink-2);
+  max-width: 48rem;
+}
+.sec code {
+  font-family: var(--mono);
+  font-size: .86em;
+  color: var(--accent-ink);
+}
+
 /* --- 주차 목록 ----------------------------------------------------------- */
 .weeks { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 
