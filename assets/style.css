@@ -535,7 +535,7 @@ code {
   font-weight: 500;
 }
 .goto::before {
-  content: "92";
+  content: "→";
   margin-right: .45rem;
   opacity: .65;
   font-weight: 400;
