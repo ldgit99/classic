@@ -313,6 +313,13 @@ a:hover { color: var(--accent); }
 .doc .tpl,
 .doc .files { max-width: none; }
 
+/* 다만 표는 내용에 맞춰서만 넓어진다 — 짧은 표까지 늘어나면 헐거워짐 */
+.doc .tw {
+  width: fit-content;
+  min-width: min(var(--measure), 100%);
+  max-width: 100%;
+}
+
 /* 좁은 화면에서는 제한을 풀어 여백이 남지 않게 */
 @media (max-width: 60rem) {
   .head > *,
@@ -585,10 +592,6 @@ code {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
-  /* 내용에 맞춰 줄어들되 산문 폭보다는 넓게, --wide 를 넘지 않게 */
-  width: fit-content;
-  min-width: min(var(--measure), 100%);
-  max-width: 100%;
 }
 table {
   border-collapse: collapse;
