@@ -32,8 +32,7 @@
   --serif: "Gowun Batang", "Nanum Myeongjo", Georgia, "Batang", serif;
   --mono: "IBM Plex Mono", "IBM Plex Sans KR", ui-monospace, "Cascadia Mono", Consolas, monospace;
 
-  --measure: 36rem;   /* 산문 — 한글 약 36자. ch는 숫자 0 기준이라 한글에 맞지 않음 */
-  --wide: 58rem;      /* 표·템플릿 블록 */
+  --measure: 68ch;
   --rail: 15.5rem;
   --radius: 3px;
 }
@@ -301,31 +300,7 @@ a:hover { color: var(--accent); }
 .rail__foot a:hover { color: var(--accent); }
 
 /* --- 본문 --------------------------------------------------------------- */
-.doc { min-width: 0; padding-top: 3.5rem; max-width: var(--wide); }
-
-/* 산문은 읽기 좋은 폭으로 제한하고 */
-.head > *,
-.q > *,
-.wrap-up > * { max-width: var(--measure); }
-
-/* 표와 템플릿 블록은 오른쪽 여백까지 쓴다 */
-.doc .tw,
-.doc .tpl,
-.doc .files { max-width: none; }
-
-/* 다만 표는 내용에 맞춰서만 넓어진다 — 짧은 표까지 늘어나면 헐거워짐 */
-.doc .tw {
-  width: fit-content;
-  min-width: min(var(--measure), 100%);
-  max-width: 100%;
-}
-
-/* 좁은 화면에서는 제한을 풀어 여백이 남지 않게 */
-@media (max-width: 60rem) {
-  .head > *,
-  .q > *,
-  .wrap-up > * { max-width: none; }
-}
+.doc { min-width: 0; padding-top: 3.5rem; max-width: var(--measure); }
 
 /* 머리말 */
 .head { margin-bottom: 3rem; }
@@ -596,7 +571,7 @@ code {
 table {
   border-collapse: collapse;
   width: 100%;
-  min-width: min(34rem, 100%);
+  min-width: 34rem;
   font-size: .89rem;
   line-height: 1.6;
 }
