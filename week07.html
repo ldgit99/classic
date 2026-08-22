@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=10">
+<link rel="stylesheet" href="assets/style.css?v=11">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🔍</text></svg>">
 </head>
 <body>
@@ -157,6 +157,66 @@
         학습자는 선행지식 차이가 커서 다르게 막힙니다.
         <strong>6–10명</strong>을 권하고, 수준이 다양하게 섞이도록 뽑으세요.
       </p>
+
+      <h3>"5명" 이야기는 어디에서 왔고, 왜 그대로 쓰면 안 되는가</h3>
+
+      <p>
+        Nielsen과 Landauer(1993)는 평가자 수에 따라 사용성 문제가 얼마나 발견되는지를
+        수학적 모형으로 정리했습니다. 널리 인용되는 "5명이면 충분하다"는 말이 여기에서
+        나왔습니다.
+      </p>
+
+      <p>
+        10년 뒤 Faulkner(2003)가 이 전제를 실제로 시험했습니다. 사용자 <strong>60명</strong>을
+        대상으로 평가한 뒤, 그 안에서 무작위로 조합을 뽑아 각 조합이 전체 문제의 몇 퍼센트를
+        찾아냈는지 셌습니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>인원</th><th>최소 발견율</th><th>무엇을 뜻하나</th></tr></thead>
+          <tbody>
+            <tr><th>5명</th><td><strong>55%</strong></td><td>어떤 조합은 99%를 찾았지만, 어떤 조합은 절반 남짓에 그쳤다</td></tr>
+            <tr><th>10명</th><td>80%</td><td>가장 나쁜 조합도 80% 아래로 내려가지 않았다</td></tr>
+            <tr><th>20명</th><td>95%</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        핵심은 평균이 아니라 <strong>편차</strong>입니다. 5명으로도 99%를 찾을 수 있지만
+        운이 나쁘면 55%에 그치고, <strong>여러분은 자기 표본이 어느 쪽인지 알 방법이
+        없습니다.</strong> 이 수업이 6–10명을 권하는 이유가 이것입니다.
+      </p>
+
+      <div class="box box--warn">
+        <p class="box__t">학습자는 더 흩어진다</p>
+        <p>
+          Faulkner의 60명은 같은 과제를 하는 비교적 동질적인 사용자였습니다.
+          학습자는 선행지식 차이가 커서 <strong>서로 다른 곳에서 막힙니다.</strong>
+          같은 인원이라도 발견율의 편차가 더 클 수 있다는 뜻입니다.
+        </p>
+        <p>
+          인원을 늘릴 수 없다면 적어도 <strong>수준이 다양하게 섞이도록 뽑고,
+          그 사실을 방법 절에 적으세요.</strong> "6명이 모두 상위권 학습자였다"는 사실은
+          결과 해석을 완전히 바꿉니다.
+        </p>
+      </div>
+
+      <div class="cite">
+        <p class="cite__t">이 절에서 인용한 문헌</p>
+        <ol>
+          <li>Nielsen, J., &amp; Landauer, T. K. (1993). A mathematical model of the finding of
+            usability problems. <em>Proceedings of the INTERACT '93 and CHI '93 Conference on
+            Human Factors in Computing Systems</em>, 206–213.
+            <span class="rl"><a href="https://doi.org/10.1145/169059.169166">doi.org/10.1145/169059.169166</a></span></li>
+          <li>Faulkner, L. (2003). Beyond the five-user assumption: Benefits of increased sample
+            sizes in usability testing. <em>Behavior Research Methods, Instruments, &amp;
+            Computers, 35</em>(3), 379–383.
+            <span class="rl"><a href="https://doi.org/10.3758/BF03195514">doi.org/10.3758/BF03195514</a>
+            · <a href="https://link.springer.com/content/pdf/10.3758/BF03195514.pdf">출판사 공개 PDF</a></span></li>
+        </ol>
+      </div>
 
       <h3>어떤 과제를 주는가</h3>
 
@@ -774,6 +834,14 @@
       <h4>읽을거리</h4>
       <ul class="refs">
         <li>
+          <strong>이번 주 대표 문헌 ①</strong> — "5명이면 충분하다"의 원출처가 된 수학적 모형
+          <span class="src"><a href="https://doi.org/10.1145/169059.169166">Nielsen &amp; Landauer (1993) · INTERCHI '93</a></span>
+        </li>
+        <li>
+          <strong>이번 주 대표 문헌 ②</strong> — 사용자 60명으로 그 전제를 시험한 연구. 5명은 55%에서 99%까지 흔들립니다
+          <span class="src"><a href="https://doi.org/10.3758/BF03195514">Faulkner (2003) · Behavior Research Methods, Instruments, &amp; Computers, 35(3)</a> · <a href="https://link.springer.com/content/pdf/10.3758/BF03195514.pdf">출판사 공개 PDF</a></span>
+        </li>
+        <li>
           설계·개발연구의 결과를 어떻게 구조화해 보고하는가
           <span class="src">Richey &amp; Klein, Design and Development Research — 보고 부분</span>
         </li>
@@ -802,6 +870,6 @@
   </div>
 </footer>
 
-<script src="assets/notes.js?v=10"></script>
+<script src="assets/notes.js?v=11"></script>
 </body>
 </html>

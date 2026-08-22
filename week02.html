@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=10">
+<link rel="stylesheet" href="assets/style.css?v=11">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>📚</text></svg>">
 </head>
 <body>
@@ -119,6 +119,86 @@
           <strong>설계 결정을 바꾸는 정보</strong>입니다. 어떤 조건에서 무엇이 효과가 있었고,
           무엇이 없었는지.
         </p>
+      </div>
+
+      <h3>이미 밝혀진 것은 이런 모양이다</h3>
+
+      <p>
+        "선행 연구를 본다"가 막연하다면 잘 정리된 <strong>메타분석</strong>부터 보세요.
+        여러분이 만들려는 것과 가장 가까운 두 계열 — 지능형 튜터링 시스템과 컴퓨터 기반
+        스캐폴딩 — 이 지금까지 무엇을 확인했는지가 각각 한 편에 담겨 있습니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>문헌</th><th>무엇을 종합했나</th><th>무엇이 나왔나</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>Kulik &amp; Fletcher<br><span class="muted">2016</span></th>
+              <td>지능형 튜터링 시스템 통제 평가 50편</td>
+              <td>효과크기 중앙값 <strong>0.66 SD</strong>. 50번째 백분위 학습자를 75번째로 올리는 정도</td>
+            </tr>
+            <tr>
+              <th>Belland 등<br><span class="muted">2017</span></th>
+              <td>STEM 영역 컴퓨터 기반 스캐폴딩 실험 144편 · 결과 333건</td>
+              <td>인지적 성과에 일관되게 긍정적 (<strong>ḡ = 0.46</strong>)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        여기까지가 <strong>인용을 위한 인용</strong>입니다. "AI 튜터는 효과가 있다(Kulik &amp;
+        Fletcher, 2016)"라고 쓰면 딱 이 수준입니다. 설계는 하나도 바뀌지 않습니다.
+        같은 논문을 이렇게 읽으면 달라집니다.
+      </p>
+
+      <div class="box box--eg">
+        <p class="box__t">설계를 바꾸는 읽기</p>
+        <p>
+          <strong>Kulik과 Fletcher(2016)</strong>는 효과크기가 <strong>어떤 시험으로
+          쟀느냐에 따라 크게 달라졌다</strong>고 보고합니다. 연구자가 직접 만든 시험에서는
+          크게, 표준화 검사에서는 작게 나왔고, 저자들은 이를 시험과 수업 목표의 정렬 문제로
+          해석합니다.
+        </p>
+        <p>
+          → 내 설계에 주는 것: <strong>7주차에 무엇으로 재느냐가 결과를 좌우합니다.</strong>
+          내가 만든 과제로만 재면 좋게 나오기 쉽다는 사실을 미리 알고 평가를 설계하세요.
+        </p>
+        <p>
+          <strong>Belland 등(2017)</strong>은 스캐폴딩의 <strong>맞춤화 — 페이딩과 추가 —</strong>
+          와 맥락 특화 지원의 역할을 둘러싼 여러 논쟁을 함께 다룹니다.
+        </p>
+        <p>
+          → 내 설계에 주는 것: 4주차에 힌트 수위를 올리고 내리는 규칙을 쓸 때, 그것이
+          그냥 좋아 보여서가 아니라 <strong>문헌이 오래 다투어 온 지점</strong>이라는 것을
+          알고 쓰게 됩니다.
+        </p>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">메타분석 한 편이 논문 열 편보다 낫다 — 다만</p>
+        <p>
+          메타분석은 그 분야가 지금까지 무엇을 확인했는지를 빠르게 보여주지만,
+          <strong>평균 뒤에 가려진 것</strong>이 있습니다. 두 편 모두 "어떤 조건에서"라는
+          단서를 달고 있습니다. 여러분에게 필요한 것은 평균값이 아니라
+          <strong>내 학습자·내 과제와 조건이 겹치는 연구</strong>입니다.
+          메타분석의 참고문헌에서 그 연구를 찾아 들어가세요.
+        </p>
+      </div>
+
+      <div class="cite">
+        <p class="cite__t">이 절에서 인용한 문헌</p>
+        <ol>
+          <li>Kulik, J. A., &amp; Fletcher, J. D. (2016). Effectiveness of intelligent tutoring
+            systems: A meta-analytic review. <em>Review of Educational Research, 86</em>(1), 42–78.
+            <span class="rl"><a href="https://doi.org/10.3102/0034654315581420">doi.org/10.3102/0034654315581420</a></span></li>
+          <li>Belland, B. R., Walker, A. E., Kim, N. J., &amp; Lefler, M. (2017). Synthesizing
+            results from empirical research on computer-based scaffolding in STEM education:
+            A meta-analysis. <em>Review of Educational Research, 87</em>(2), 309–344.
+            <span class="rl"><a href="https://doi.org/10.3102/0034654316670999">doi.org/10.3102/0034654316670999</a>
+            · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5347356/">PMC 공개본</a></span></li>
+        </ol>
       </div>
 
       <div class="check">
@@ -733,6 +813,14 @@ AND (중학생 OR 중등)</code></pre>
       <h4>읽을거리</h4>
       <ul class="refs">
         <li>
+          <strong>이번 주 대표 문헌 ①</strong> — 지능형 튜터링 시스템 메타분석. 효과크기가 평가 도구에 따라 어떻게 달라지는지를 특히 보세요
+          <span class="src"><a href="https://doi.org/10.3102/0034654315581420">Kulik &amp; Fletcher (2016) · Review of Educational Research, 86(1)</a></span>
+        </li>
+        <li>
+          <strong>이번 주 대표 문헌 ②</strong> — 컴퓨터 기반 스캐폴딩 메타분석 144편. 페이딩과 맥락 특화 지원을 둘러싼 논쟁 부분이 4주차와 이어집니다
+          <span class="src"><a href="https://doi.org/10.3102/0034654316670999">Belland 등 (2017) · Review of Educational Research, 87(2)</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5347356/">PMC 전문</a></span>
+        </li>
+        <li>
           설계·개발연구에서 문헌 고찰이 설계원리로 이어지는 경로
           <span class="src">Richey &amp; Klein, Design and Development Research, 2–3장</span>
         </li>
@@ -765,6 +853,6 @@ AND (중학생 OR 중등)</code></pre>
   </div>
 </footer>
 
-<script src="assets/notes.js?v=10"></script>
+<script src="assets/notes.js?v=11"></script>
 </body>
 </html>

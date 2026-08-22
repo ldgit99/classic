@@ -688,6 +688,37 @@ td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
   letter-spacing: -.015em;
 }
 
+/* 인용 문헌 (APA) */
+.cite {
+  margin: 2rem 0;
+  padding: 1.25rem 1.4rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  font-size: .87rem;
+  line-height: 1.7;
+}
+.cite__t {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 .85rem;
+}
+.cite ol { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
+.cite li { padding-left: 1.5rem; text-indent: -1.5rem; }
+.cite em { font-style: italic; }
+.cite .rl {
+  display: block;
+  text-indent: 0;
+  margin-top: .2rem;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .01em;
+}
+.cite .rl a { word-break: break-all; }
+
 .refs { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
 .refs li {
   padding-left: 1.1rem;

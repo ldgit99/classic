@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=10">
+<link rel="stylesheet" href="assets/style.css?v=11">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
 </head>
 <body>
@@ -124,6 +124,136 @@
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <h3>연구에서는 어떻게 정의해 왔는가</h3>
+
+      <p>
+        위 네 요소는 이 수업이 쓰려고 정리한 것이지만 임의로 만든 구분은 아닙니다.
+        에이전트 연구에는 30년 가까이 이어진 정의의 계보가 있습니다.
+        아래 두 편이 그 계보의 양 끝입니다.
+      </p>
+
+      <h4>1995 · 고전적 정의</h4>
+
+      <p>
+        Wooldridge와 Jennings(1995)는 당시 제각각으로 쓰이던 "에이전트"라는 말을 정리하면서,
+        최소한 다음 네 속성을 갖춘 시스템을 <strong>약한 의미의 에이전트</strong>라고
+        규정했습니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>속성</th><th>논문의 규정</th><th>이 수업의 네 요소로는</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>자율성<br><span class="muted">autonomy</span></th>
+              <td>사람의 직접 개입 없이 작동하며, 자기 행동과 내부 상태를 스스로 통제한다</td>
+              <td>자율성 · 상태</td>
+            </tr>
+            <tr>
+              <th>사회적 능력<br><span class="muted">social ability</span></th>
+              <td>다른 에이전트나 사람과 일정한 언어로 상호작용한다</td>
+              <td>학습자와의 대화</td>
+            </tr>
+            <tr>
+              <th>반응성<br><span class="muted">reactivity</span></th>
+              <td>환경을 지각하고 그 변화에 제때 응답한다</td>
+              <td>도구</td>
+            </tr>
+            <tr>
+              <th>주도성<br><span class="muted">pro-activeness</span></th>
+              <td>환경에 반응만 하는 것이 아니라 주도적으로 목표 지향 행동을 한다</td>
+              <td>목표</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        네 속성 중 결정적인 것은 <strong>주도성</strong>입니다. 물어야 답하는 시스템에는
+        이 속성이 없습니다. 앞에서 "단순 챗봇은 AI 에이전트가 아니다"라고 한 근거가
+        여기 있습니다.
+      </p>
+
+      <h4>2024 · LLM 시대의 정의</h4>
+
+      <p>
+        30년 뒤 Wang 등(2024)은 LLM 기반 자율 에이전트 연구를 종합하면서, 그때까지의 연구
+        대부분을 포괄하는 통합 구조를 <strong>네 개의 모듈</strong>로 제시했습니다.
+        1995년의 목록이 <em>무엇을 갖춰야 하는가</em>였다면, 이쪽은
+        <em>무엇으로 만드는가</em>입니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>모듈</th><th>하는 일</th><th>5주차의 다섯 부품으로는</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>프로파일링<br><span class="muted">profiling</span></th>
+              <td>역할과 속성을 프롬프트에 넣어 이 에이전트가 누구인지 규정한다</td>
+              <td>Prompt</td>
+            </tr>
+            <tr>
+              <th>기억<br><span class="muted">memory</span></th>
+              <td>지각한 것과 지난 행동을 저장해 일관된 행동을 유지한다</td>
+              <td>State · Knowledge</td>
+            </tr>
+            <tr>
+              <th>계획<br><span class="muted">planning</span></th>
+              <td>복잡한 과제를 하위 과제로 쪼개고 행동 순서를 만든다</td>
+              <td>Harness</td>
+            </tr>
+            <tr>
+              <th>행동<br><span class="muted">action</span></th>
+              <td>결정을 실제 출력으로 옮긴다. 내부 지식만 쓰기도 하고 외부 도구를 쓰기도 한다</td>
+              <td>Tool</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">30년 사이에 무엇이 달라졌나</p>
+        <p>
+          <strong>달라지지 않은 것</strong> — 스스로 판단하고, 환경과 주고받고,
+          목표를 향해 먼저 움직인다는 뼈대. 두 논문은 30년 떨어져 있지만 같은 것을 말합니다.
+        </p>
+        <p>
+          <strong>달라진 것</strong> — 1995년에는 네 속성을 갖춘 시스템을 만드는 일
+          자체가 연구 과제였습니다. 지금은 LLM이 언어 이해와 계획의 상당 부분을 맡아,
+          여러분이 한 학기에 하나를 만들 수 있습니다.
+          <strong>쉬워진 것은 만드는 일이고, 무엇을 만들지 정하는 일은 그대로 어렵습니다.</strong>
+        </p>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">함정 · 옛 개념을 지금 맥락으로 그대로 옮기기</p>
+        <p>
+          Wooldridge와 Jennings의 "사회적 능력"은 원래 <strong>에이전트끼리</strong> 통신하는
+          능력을 가리켰습니다. 여러분의 에이전트는 대개 학습자 한 명을 상대하므로 그 뜻
+          그대로는 아닙니다.
+        </p>
+        <p>
+          개념을 빌려 올 때는 <strong>원문이 무엇을 가리켰는지 확인하고, 달라진 부분은
+          달라졌다고 쓰세요.</strong> 2주차 문헌 분석에서 계속 하게 될 일입니다.
+        </p>
+      </div>
+
+      <div class="cite">
+        <p class="cite__t">이 절에서 인용한 문헌</p>
+        <ol>
+          <li>Wooldridge, M., &amp; Jennings, N. R. (1995). Intelligent agents: Theory and practice.
+            <em>The Knowledge Engineering Review, 10</em>(2), 115–152.
+            <span class="rl"><a href="https://doi.org/10.1017/S0269888900008122">doi.org/10.1017/S0269888900008122</a>
+            · <a href="https://www.cs.ox.ac.uk/people/michael.wooldridge/pubs/ker95/ker95-html.html">저자 공개본 전문</a></span></li>
+          <li>Wang, L., Ma, C., Feng, X., Zhang, Z., Yang, H., Zhang, J., Chen, Z., Tang, J.,
+            Chen, X., Lin, Y., Zhao, W. X., Wei, Z., &amp; Wen, J.-R. (2024).
+            A survey on large language model based autonomous agents.
+            <em>Frontiers of Computer Science, 18</em>(6), Article 186345.
+            <span class="rl"><a href="https://doi.org/10.1007/s11704-024-40231-1">doi.org/10.1007/s11704-024-40231-1</a>
+            · <a href="https://arxiv.org/abs/2308.11432">arXiv 공개본</a></span></li>
+        </ol>
       </div>
 
       <div class="box box--eg">
@@ -1101,6 +1231,14 @@ A4.
       <h4>읽을거리</h4>
       <ul class="refs">
         <li>
+          <strong>이번 주 대표 문헌 ①</strong> — 에이전트의 고전적 정의. 자율성·사회적 능력·반응성·주도성 네 속성이 어디에서 왔는지
+          <span class="src"><a href="https://doi.org/10.1017/S0269888900008122">Wooldridge &amp; Jennings (1995) · Knowledge Engineering Review, 10(2)</a> · <a href="https://www.cs.ox.ac.uk/people/michael.wooldridge/pubs/ker95/ker95-html.html">전문 보기</a></span>
+        </li>
+        <li>
+          <strong>이번 주 대표 문헌 ②</strong> — LLM 기반 에이전트 연구 종합. 프로파일링·기억·계획·행동 네 모듈 구조. 3장까지만 읽어도 충분합니다
+          <span class="src"><a href="https://doi.org/10.1007/s11704-024-40231-1">Wang 등 (2024) · Frontiers of Computer Science, 18(6)</a> · <a href="https://arxiv.org/abs/2308.11432">arXiv 전문</a></span>
+        </li>
+        <li>
           요구 분석과 설계·개발연구의 관계 — 문제 정의가 왜 연구의 절반인지
           <span class="src">Richey &amp; Klein, Design and Development Research, 1장</span>
         </li>
@@ -1138,6 +1276,6 @@ A4.
   </div>
 </footer>
 
-<script src="assets/notes.js?v=10"></script>
+<script src="assets/notes.js?v=11"></script>
 </body>
 </html>

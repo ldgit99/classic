@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=10">
+<link rel="stylesheet" href="assets/style.css?v=11">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>📋</text></svg>">
 </head>
 <body>
@@ -381,6 +381,91 @@ learner:
           6주차 전문가가 가장 먼저 확인하는 항목입니다.
         </p>
       </div>
+
+      <h3>페이딩이 없으면 스캐폴딩이 아니다</h3>
+
+      <p>
+        앞 문단은 실무적 조언처럼 들리지만, 사실 이 분야에서 오래 논의된 이론적 주장입니다.
+        Pea(2004)는 도움을 거두는 장치가 없는 지원은 스캐폴딩이 아니라고 못 박습니다.
+      </p>
+
+      <div class="define">
+        도움을 <b>해체하는 장치</b>가 없으면, 최근 스캐폴딩이라 불리는 지원들은
+        사실 <b>분산 지능</b>(distributed intelligence)에 가깝다. 계산기가 늘 옆에 있는
+        것과 같은 상태다. (Pea, 2004의 논지)
+      </div>
+
+      <p>
+        Pea는 <strong>페이딩이 있는 스캐폴딩</strong>과 <strong>페이딩이 없는 분산 지능</strong>의
+        경계를 긋는 것이 학습과학의 핵심 문제라고 말합니다. 둘 다 유용하지만 목적이
+        다릅니다. 분산 지능은 <em>지금 더 잘 하게</em> 만들고, 스캐폴딩은
+        <em>나중에 혼자 하게</em> 만듭니다.
+      </p>
+
+      <div class="box box--eg">
+        <p class="box__t">내 에이전트는 어느 쪽인가</p>
+        <p>
+          학습자가 8주차에도 여러분의 에이전트 없이는 그 과제를 못 한다면, 여러분이 만든 것은
+          <strong>훌륭한 도구이되 스캐폴딩은 아닙니다.</strong> 그것이 나쁘다는 뜻은 아닙니다.
+          다만 <strong>연구에서 무엇을 주장할 수 있는지가 달라집니다.</strong>
+          도구라면 "수행을 돕는다"까지, 스캐폴딩이라면 "혼자 하게 만든다"까지 주장할 수 있습니다.
+          명세서 6.3 성공 기준을 쓸 때 이 구분을 반영하세요.
+        </p>
+      </div>
+
+      <h3>도구로 옮기면서 빠뜨리는 세 가지</h3>
+
+      <p>
+        Puntambekar와 Hübscher(2005)는 스캐폴딩이 <strong>사람 사이의 상호작용</strong>에서
+        <strong>소프트웨어 도구</strong>로 옮겨 오는 과정에서 무엇이 사라졌는지를 짚었습니다.
+        이론에서 중요했던 세 가지가 도구에서는 대체로 빠져 있다는 것입니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>빠지는 것</th><th>무슨 뜻인가</th><th>내 명세서에서 막는 법</th></tr></thead>
+          <tbody>
+            <tr>
+              <th>지속적 진단<br><span class="muted">ongoing diagnosis</span></th>
+              <td>학습자가 지금 어디에 있는지 계속 확인하는 일</td>
+              <td>3.2 상태 스키마 — 시도 횟수·충족한 기준을 매 턴 갱신</td>
+            </tr>
+            <tr>
+              <th>맞춘 지원<br><span class="muted">calibrated support</span></th>
+              <td>진단 결과에 맞춰 도움의 양과 종류를 조절하는 일</td>
+              <td>4.2 조절 규칙 — 어떤 조건에 어느 수위로</td>
+            </tr>
+            <tr>
+              <th>페이딩<br><span class="muted">fading</span></th>
+              <td>학습자가 해내면 도움을 거두는 일</td>
+              <td>4.2 <strong>내리는 조건</strong> — 이 칸이 비면 위 두 개도 무의미해진다</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        세 가지가 <strong>순서대로 물려 있다</strong>는 점이 중요합니다. 진단이 없으면
+        맞출 수 없고, 맞추지 못하면 거둘 시점도 알 수 없습니다. 명세서 3.2가 부실하면
+        4.2를 아무리 잘 써도 작동하지 않는 이유가 이것입니다.
+      </p>
+
+      <div class="cite">
+        <p class="cite__t">이 절에서 인용한 문헌</p>
+        <ol>
+          <li>Pea, R. D. (2004). The social and technological dimensions of scaffolding and
+            related theoretical concepts for learning, education, and human activity.
+            <em>Journal of the Learning Sciences, 13</em>(3), 423–451.
+            <span class="rl"><a href="https://doi.org/10.1207/s15327809jls1303_6">doi.org/10.1207/s15327809jls1303_6</a>
+            · <a href="https://web.stanford.edu/~roypea/RoyPDF%20folder/A117_Pea_04_JLS_Scaffolding.pdf">저자 공개본 PDF</a></span></li>
+          <li>Puntambekar, S., &amp; Hübscher, R. (2005). Tools for scaffolding students in a
+            complex learning environment: What have we gained and what have we missed?
+            <em>Educational Psychologist, 40</em>(1), 1–12.
+            <span class="rl"><a href="https://doi.org/10.1207/s15326985ep4001_1">doi.org/10.1207/s15326985ep4001_1</a>
+            · <a href="https://hubscher.org/roland/courses/hf765/readings/EP_puntambekar_hubscher_2005.pdf">저자 공개본 PDF</a></span></li>
+        </ol>
+      </div>
+
 
       <h3>피드백의 형식</h3>
 
@@ -919,6 +1004,14 @@ learner:
       <h4>읽을거리</h4>
       <ul class="refs">
         <li>
+          <strong>이번 주 대표 문헌 ①</strong> — 페이딩이 없으면 스캐폴딩이 아니라 분산 지능이다. 명세서 4.2를 쓰기 전에 읽으세요
+          <span class="src"><a href="https://doi.org/10.1207/s15327809jls1303_6">Pea (2004) · Journal of the Learning Sciences, 13(3)</a> · <a href="https://web.stanford.edu/~roypea/RoyPDF%20folder/A117_Pea_04_JLS_Scaffolding.pdf">저자 공개 PDF</a></span>
+        </li>
+        <li>
+          <strong>이번 주 대표 문헌 ②</strong> — 스캐폴딩을 소프트웨어로 옮기며 빠뜨린 세 가지: 지속적 진단·맞춘 지원·페이딩
+          <span class="src"><a href="https://doi.org/10.1207/s15326985ep4001_1">Puntambekar &amp; Hübscher (2005) · Educational Psychologist, 40(1)</a> · <a href="https://hubscher.org/roland/courses/hf765/readings/EP_puntambekar_hubscher_2005.pdf">저자 공개 PDF</a></span>
+        </li>
+        <li>
           스캐폴딩의 페이딩이 왜 어렵고 왜 중요한가
           <span class="src">검색어 예: scaffolding fading, contingent support</span>
         </li>
@@ -947,6 +1040,6 @@ learner:
   </div>
 </footer>
 
-<script src="assets/notes.js?v=10"></script>
+<script src="assets/notes.js?v=11"></script>
 </body>
 </html>

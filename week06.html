@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=10">
+<link rel="stylesheet" href="assets/style.css?v=11">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>⚖️</text></svg>">
 </head>
 <body>
@@ -445,6 +445,65 @@
         </p>
       </div>
 
+      <h3>이 숫자들은 어디에서 왔는가</h3>
+
+      <p>
+        위 공식과 기준값은 관행이 아니라 출처가 있습니다. 보고서 방법 절에 기준을 쓸 때는
+        <strong>출처를 함께 밝혀야</strong> 합니다.
+      </p>
+
+      <p>
+        Lawshe(1975)의 착안은 단순합니다. 전문가 <strong>절반</strong>이 "필수"라고 답하는 일은
+        동전 던지기로도 일어납니다. 그래서 절반(N/2)을 기준선으로 놓고 그보다 얼마나 더
+        동의했는지를 재도록 식을 만들었습니다. CVR이 0이면 정확히 절반, 음수면 절반에도
+        못 미쳤다는 뜻입니다.
+      </p>
+
+      <p>
+        Polit, Beck과 Owen(2007)은 CVI가 계산이 쉽고 문항 수준과 척도 수준 정보를 함께 준다는
+        점에서 다른 지수보다 낫다고 보면서도, <strong>우연 일치를 보정하지 못한다</strong>는
+        약점을 지적했습니다. 그래서 I-CVI를 수정 카파 값으로 환산했고, 그 결과
+        <strong>전문가 3명 이상에서 I-CVI가 .78 이상이면 좋은 내용타당도의 근거로 볼 수 있다</strong>고
+        제안했습니다.
+      </p>
+
+      <div class="box box--warn">
+        <p class="box__t">기준이 두 가지로 도는 이유</p>
+        <p>
+          앞의 기준표(3–5명 1.00 · 6–8명 ≥ 0.83 · 9명 이상 ≥ 0.78)와 여기의 .78은
+          <strong>출처가 다릅니다.</strong> 앞의 것은 전문가 수에 따라 요구 수준을 달리해 온
+          관행이고, .78은 우연 일치를 보정해 얻은 단일 기준입니다.
+        </p>
+        <p>
+          둘 중 무엇을 쓰든 됩니다. 다만 <strong>어느 기준을 왜 썼는지 한 줄로 밝히세요.</strong>
+          밝히지 않으면 심사에서 반드시 묻고, 그때 답하지 못하면 지수 전체가 의심받습니다.
+        </p>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">왜 간호학 논문이 여기 나오나</p>
+        <p>
+          CVI 계산의 표준 참고문헌은 대부분 간호학에서 나왔습니다. 측정 도구를 새로 만들고
+          그 타당성을 전문가에게 확인받는 일이 그 분야에서 특히 활발했기 때문입니다.
+          교육공학 논문도 대개 이 문헌을 인용합니다.
+          <strong>분야가 달라도 절차가 같으면 그 분야의 표준을 가져오는 것</strong>이
+          정상적인 연구 관행입니다. 다만 인용할 때 어디에서 온 기준인지는 밝히세요.
+        </p>
+      </div>
+
+      <div class="cite">
+        <p class="cite__t">이 절에서 인용한 문헌</p>
+        <ol>
+          <li>Lawshe, C. H. (1975). A quantitative approach to content validity.
+            <em>Personnel Psychology, 28</em>(4), 563–575.
+            <span class="rl"><a href="https://doi.org/10.1111/j.1744-6570.1975.tb01393.x">doi.org/10.1111/j.1744-6570.1975.tb01393.x</a></span></li>
+          <li>Polit, D. F., Beck, C. T., &amp; Owen, S. V. (2007). Is the CVI an acceptable
+            indicator of content validity? Appraisal and recommendations.
+            <em>Research in Nursing &amp; Health, 30</em>(4), 459–467.
+            <span class="rl"><a href="https://doi.org/10.1002/nur.20199">doi.org/10.1002/nur.20199</a></span></li>
+        </ol>
+      </div>
+
       <div class="box box--warn">
         <p class="box__t">지수가 낮게 나와도 그대로 보고하라</p>
         <p>
@@ -733,6 +792,14 @@
       <h4>읽을거리</h4>
       <ul class="refs">
         <li>
+          <strong>이번 주 대표 문헌 ①</strong> — CVR 공식의 출처. 왜 N/2를 기준선으로 두는지
+          <span class="src"><a href="https://doi.org/10.1111/j.1744-6570.1975.tb01393.x">Lawshe (1975) · Personnel Psychology, 28(4)</a></span>
+        </li>
+        <li>
+          <strong>이번 주 대표 문헌 ②</strong> — CVI의 약점과 수정 카파. I-CVI .78 기준이 여기에서 나왔습니다
+          <span class="src"><a href="https://doi.org/10.1002/nur.20199">Polit, Beck &amp; Owen (2007) · Research in Nursing &amp; Health, 30(4)</a></span>
+        </li>
+        <li>
           사용성 평가에서 몇 명이면 충분한가 — 소표본 논쟁과 그 조건
           <span class="src">검색어 예: how many users usability test, five users</span>
         </li>
@@ -761,6 +828,6 @@
   </div>
 </footer>
 
-<script src="assets/notes.js?v=10"></script>
+<script src="assets/notes.js?v=11"></script>
 </body>
 </html>

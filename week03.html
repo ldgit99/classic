@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=10">
+<link rel="stylesheet" href="assets/style.css?v=11">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>📐</text></svg>">
 </head>
 <body>
@@ -125,6 +125,95 @@
           원리로 착각하기 쉬운 이유는 문장이 명령형이기 때문입니다. 구분법은 간단합니다.
           <strong>"왜?"라고 물었을 때 이론이나 자료로 답할 수 있으면 원리, 없으면 기능</strong>입니다.
         </p>
+      </div>
+
+      <h3>설계원리는 연구 산출물이다</h3>
+
+      <p>
+        설계원리를 "보고서에 넣어야 하는 항목"으로 여기면 이번 주가 지루한 형식 작업이
+        됩니다. 설계 연구에서 원리는 <strong>연구가 만들어 내는 지식 그 자체</strong>입니다.
+      </p>
+
+      <p>
+        Edelson(2002)은 설계 연구가 산출물만 남기는 것이 아니라 <strong>세 종류의 이론</strong>을
+        만들어 낸다고 정리했습니다. 그리고 그 셋이 각각 설계의 어느 국면에서 나오는지를
+        짝지었습니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>어디에서 나오나</th><th>무엇이 남나</th><th>이 수업에서는</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>문제 분석<br><span class="muted">problem analysis</span></td>
+              <td><strong>영역 이론</strong> <span class="muted">domain theory</span><br>이 문제가 왜 어려운가에 대한 이해</td>
+              <td>1–2주차 요구 분석과 문헌 분석</td>
+            </tr>
+            <tr>
+              <td>설계 해법<br><span class="muted">design solution</span></td>
+              <td><strong>설계 프레임워크</strong> <span class="muted">design framework</span><br>이런 문제에는 이렇게 설계하라</td>
+              <td><strong>3주차 설계원리 — 오늘 하는 일</strong></td>
+            </tr>
+            <tr>
+              <td>설계 과정<br><span class="muted">design process</span></td>
+              <td><strong>설계 방법론</strong> <span class="muted">design methodology</span><br>이런 것을 만들려면 이렇게 진행하라</td>
+              <td>매주 기록해 온 절차 전체</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        여기서 중요한 것은 가운데 줄입니다. 여러분이 오늘 쓰는 원리는
+        <strong>여러분의 에이전트에 대한 설명이 아니라, 같은 문제를 가진 다른 사람에게
+        건네줄 수 있는 지식</strong>이어야 합니다. 그래서 원리 문장에 특정 제품 이름이
+        들어가면 안 되고, 근거가 붙어야 합니다.
+      </p>
+
+      <h3>실제로 이렇게 한 연구</h3>
+
+      <p>
+        Herrington과 Oliver(2000)는 지금 여러분이 할 일을 그대로 했습니다. 세 단계였습니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>단계</th><th>그들이 한 일</th><th>이 수업의 주차</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>방대한 문헌에서 상황학습 환경의 <strong>결정적 특성</strong>을 뽑았다</td><td>2–3주차</td></tr>
+            <tr><td>2</td><td>그 특성들을 실제 멀티미디어 프로그램으로 <strong>구현</strong>했다</td><td>4–5주차</td></tr>
+            <tr><td>3</td><td>학습자가 그것을 쓰며 무엇을 경험했는지 <strong>조사</strong>했다</td><td>7주차</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        25년 전 논문이고 도구도 다르지만, <strong>절차는 여러분이 8주 동안 하는 것과
+        같습니다.</strong> 바뀐 것은 구현 수단뿐입니다.
+      </p>
+
+      <div class="box box--warn">
+        <p class="box__t">함정 · 원리를 구현 뒤에 쓰기</p>
+        <p>
+          Edelson의 구분을 따르면, 만들고 나서 "이런 원리로 만들었습니다"라고 정리한 것은
+          설계 프레임워크가 아니라 <strong>사후 설명</strong>입니다. 둘은 문서상으로 비슷해
+          보이지만 6주차에 갈립니다. 전문가가 "이 원리를 지키지 않으면 어떤 설계가
+          되느냐"고 물었을 때, 사후 설명은 답하지 못합니다.
+        </p>
+      </div>
+
+      <div class="cite">
+        <p class="cite__t">이 절에서 인용한 문헌</p>
+        <ol>
+          <li>Edelson, D. C. (2002). Design research: What we learn when we engage in design.
+            <em>Journal of the Learning Sciences, 11</em>(1), 105–121.
+            <span class="rl"><a href="https://doi.org/10.1207/S15327809JLS1101_4">doi.org/10.1207/S15327809JLS1101_4</a></span></li>
+          <li>Herrington, J., &amp; Oliver, R. (2000). An instructional design framework for
+            authentic learning environments. <em>Educational Technology Research and
+            Development, 48</em>(3), 23–48.
+            <span class="rl"><a href="https://doi.org/10.1007/BF02319856">doi.org/10.1007/BF02319856</a>
+            · <a href="https://ro.uow.edu.au/edupapers/31/">기관 저장소 공개본</a></span></li>
+        </ol>
       </div>
 
       <div class="box box--do">
@@ -690,6 +779,14 @@
       <h4>읽을거리</h4>
       <ul class="refs">
         <li>
+          <strong>이번 주 대표 문헌 ①</strong> — 설계 연구가 남기는 세 종류의 이론. 오늘 쓰는 설계원리가 왜 연구 산출물인지
+          <span class="src"><a href="https://doi.org/10.1207/S15327809JLS1101_4">Edelson (2002) · Journal of the Learning Sciences, 11(1)</a></span>
+        </li>
+        <li>
+          <strong>이번 주 대표 문헌 ②</strong> — 문헌에서 설계원리를 뽑아 실제로 구현하고 학습자에게 확인한 연구. 이 수업의 8주 절차와 같습니다
+          <span class="src"><a href="https://doi.org/10.1007/BF02319856">Herrington &amp; Oliver (2000) · ETR&amp;D, 48(3)</a> · <a href="https://ro.uow.edu.au/edupapers/31/">기관 저장소 전문</a></span>
+        </li>
+        <li>
           설계원리가 어떻게 도출되고 검증되는가 — 설계기반연구의 절차
           <span class="src">McKenney &amp; Reeves, Conducting Educational Design Research</span>
         </li>
@@ -718,6 +815,6 @@
   </div>
 </footer>
 
-<script src="assets/notes.js?v=10"></script>
+<script src="assets/notes.js?v=11"></script>
 </body>
 </html>

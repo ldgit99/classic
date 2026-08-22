@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=10">
+<link rel="stylesheet" href="assets/style.css?v=11">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🔧</text></svg>">
 </head>
 <body>
@@ -143,6 +143,107 @@
           <li>"대화 기록이 안 남아요" → <strong>Harness</strong></li>
         </ul>
       </div>
+
+      <h3>이 다섯 부품은 어디에서 왔는가</h3>
+
+      <p>
+        다섯 부품은 이 수업이 정리한 이름이지만, 각각 뒤에 구체적인 연구가 있습니다.
+        그중 둘은 여러분이 이번 주에 실제로 쓰게 될 구조를 처음 제안한 논문입니다.
+      </p>
+
+      <h4>Tool과 Harness · 생각과 행동을 번갈아 하기</h4>
+
+      <p>
+        Yao 등(2023)이 제안한 <strong>ReAct</strong>는 언어 모델이
+        <em>추론 흔적</em>과 <em>행동</em>을 번갈아 내놓게 하는 방식입니다.
+        "무엇을 해야 하지" → 도구 호출 → "결과가 이러니 다음은" → 도구 호출 …
+        이렇게 생각과 행동을 교대시키면 둘이 서로를 돕습니다.
+        추론이 다음 행동을 정하고, 행동의 결과가 다음 추론을 교정합니다.
+      </p>
+
+      <p>
+        Claude Code나 Codex에게 "도구를 쓰는 에이전트를 만들어 줘"라고 하면 대개
+        이 구조가 나옵니다. <strong>구조를 알고 요청하는 것과 모르고 받는 것은
+        디버깅에서 갈립니다.</strong> 에이전트가 엉뚱한 도구를 부를 때, 문제가 추론 쪽인지
+        행동 쪽인지 구분할 수 있어야 고칠 수 있습니다.
+      </p>
+
+      <h4>State · 무엇을 어떻게 기억하는가</h4>
+
+      <p>
+        Park 등(2023)의 <strong>생성 에이전트</strong>는 상태 관리를 본격적으로 다룬 사례입니다.
+        25명의 에이전트가 사는 가상 마을을 만들었는데, 각 에이전트는
+        경험을 자연어로 <strong>기억 흐름</strong>에 쌓고, 그것을 시간이 지나며
+        더 높은 수준의 <strong>성찰</strong>로 요약하고, 필요할 때 꺼내 와 다음 행동을
+        계획했습니다.
+      </p>
+
+      <div class="tw">
+        <table>
+          <thead><tr><th>그들의 장치</th><th>하는 일</th><th>여러분의 8주 버전</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>기억 흐름 <span class="muted">memory stream</span></td>
+              <td>경험을 자연어로 시간순으로 쌓는다</td>
+              <td>대화 로그 파일</td>
+            </tr>
+            <tr>
+              <td>성찰 <span class="muted">reflection</span></td>
+              <td>쌓인 기억을 더 높은 수준의 판단으로 요약한다</td>
+              <td>상태 객체의 <code>criteria_met</code>, <code>attempt_count</code></td>
+            </tr>
+            <tr>
+              <td>인출 <span class="muted">retrieval</span></td>
+              <td>지금 필요한 기억만 꺼내 다음 행동에 쓴다</td>
+              <td>매 턴 프롬프트에 찍어 넣는 상태 문자열</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box box--eg">
+        <p class="box__t">여러분의 것은 훨씬 작아도 된다</p>
+        <p>
+          Park 등의 구조를 그대로 만들 필요는 없습니다. 여러분의 에이전트는 학습자 한 명과
+          한 차시를 보내면 되고, 25명이 서로를 기억할 일도 없습니다.
+        </p>
+        <p>
+          다만 <strong>세 가지 역할이 필요하다는 것은 규모와 무관합니다.</strong>
+          쌓고, 요약하고, 필요할 때 꺼내 쓰기. 여러분의 상태 객체 하나가 이 셋을 다 합니다.
+          그것이 없으면 힌트 수위가 올라가지도 내려가지도 않습니다.
+        </p>
+      </div>
+
+      <div class="box box--warn">
+        <p class="box__t">두 논문은 교육 논문이 아니다</p>
+        <p>
+          ReAct는 질의응답과 웹 조작 과제에서, 생성 에이전트는 사회적 행동의 그럴듯함을
+          기준으로 평가됐습니다. <strong>학습 효과를 확인한 연구가 아닙니다.</strong>
+        </p>
+        <p>
+          그러므로 이 두 편은 <strong>구조의 근거</strong>로만 쓰세요. 6주차에 전문가가
+          "이 기능의 교육적 근거는 무엇입니까"라고 물으면, 답은 이 논문이 아니라
+          2–3주차에 고른 교수학습 이론이어야 합니다. 구조의 근거와 교육의 근거는
+          다른 문헌에서 옵니다.
+        </p>
+      </div>
+
+      <div class="cite">
+        <p class="cite__t">이 절에서 인용한 문헌</p>
+        <ol>
+          <li>Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., &amp; Cao, Y. (2023).
+            ReAct: Synergizing reasoning and acting in language models.
+            <em>The Eleventh International Conference on Learning Representations (ICLR 2023)</em>.
+            <span class="rl"><a href="https://arxiv.org/abs/2210.03629">arxiv.org/abs/2210.03629</a></span></li>
+          <li>Park, J. S., O'Brien, J., Cai, C. J., Morris, M. R., Liang, P., &amp; Bernstein, M. S.
+            (2023). Generative agents: Interactive simulacra of human behavior.
+            <em>Proceedings of the 36th Annual ACM Symposium on User Interface Software and
+            Technology (UIST '23)</em>, 1–22.
+            <span class="rl"><a href="https://doi.org/10.1145/3586183.3606763">doi.org/10.1145/3586183.3606763</a>
+            · <a href="https://arxiv.org/abs/2304.03442">arXiv 공개본</a></span></li>
+        </ol>
+      </div>
+
 
       <div class="check">
         <b>자기점검</b>
@@ -878,6 +979,14 @@ git commit -m "명세서 v1.0"
       <h4>읽을거리</h4>
       <ul class="refs">
         <li>
+          <strong>이번 주 대표 문헌 ①</strong> — 추론과 행동을 번갈아 내놓는 구조. 도구를 쓰는 에이전트의 표준 형태가 됐습니다
+          <span class="src"><a href="https://arxiv.org/abs/2210.03629">Yao 등 (2023) · ICLR 2023</a></span>
+        </li>
+        <li>
+          <strong>이번 주 대표 문헌 ②</strong> — 기억 흐름·성찰·인출로 상태를 관리한 사례. 4·5절만 읽어도 State 설계에 바로 씁니다
+          <span class="src"><a href="https://doi.org/10.1145/3586183.3606763">Park 등 (2023) · UIST '23</a> · <a href="https://arxiv.org/abs/2304.03442">arXiv 전문</a></span>
+        </li>
+        <li>
           에이전트를 만들 때 언제 단순하게 유지해야 하는가
           <span class="src">검색어 예: building effective agents, when not to use agents</span>
         </li>
@@ -906,6 +1015,6 @@ git commit -m "명세서 v1.0"
   </div>
 </footer>
 
-<script src="assets/notes.js?v=10"></script>
+<script src="assets/notes.js?v=11"></script>
 </body>
 </html>
